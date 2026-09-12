@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EduAnalytics - Presentación CRISP-DM</title>
+  <style>
+    :root{
+      --bg:#070B18;
+      --bg2:#0E1630;
+      --card:#111B38;
+      --card2:#17244A;
+      --text:#F6F8FF;
+      --muted:#B9C3DA;
+      --gold:#F2C14E;
+      --cyan:#45D3FF;
+      --red:#FF6B6B;
+      --green:#65D69A;
+      --violet:#A78BFA;
+      --line:rgba(255,255,255,.16);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family: Inter, Segoe UI, Arial, sans-serif;
+      background: radial-gradient(circle at 15% 20%, rgba(69,211,255,.18), transparent 28%),
+                  radial-gradient(circle at 85% 80%, rgba(242,193,78,.16), transparent 30%),
+                  linear-gradient(135deg,var(--bg),var(--bg2));
+      color:var(--text);
+      overflow:hidden;
+    }
+    .deck{width:100vw;height:100vh;position:relative}
+    .slide{
+      width:100vw;height:100vh;display:none;position:absolute;inset:0;
+      padding:46px 58px 34px;
+    }
+    .slide.active{display:block;animation:fade .35s ease}
+    .slide.cover.active{display:flex}
+    @keyframes fade{from{opacity:.25;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    .slide::before{
+      content:"";position:absolute;inset:22px;border:1px solid var(--line);border-radius:26px;pointer-events:none;
+      box-shadow:0 0 40px rgba(69,211,255,.05) inset;
+    }
+    .brand{position:absolute;top:34px;right:54px;color:var(--muted);font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+    h1{font-size:54px;line-height:1.05;letter-spacing:-.04em;margin-bottom:18px}
+    h2{font-size:38px;line-height:1.05;margin-bottom:20px;letter-spacing:-.035em}
+    h3{font-size:20px;margin-bottom:8px;color:var(--gold);letter-spacing:-.01em}
+    p{font-size:18px;line-height:1.42;color:var(--muted)}
+    .accent{color:var(--gold)}
+    .cyan{color:var(--cyan)}
+    .muted{color:var(--muted)}
+    .cover{align-items:center;justify-content:center;text-align:center;padding:60px}
+    .cover-content{max-width:1040px}
+    .uni{font-size:23px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:28px}
+    .subject{font-size:24px;color:var(--cyan);font-weight:700;margin:12px 0 30px}
+    .team{display:grid;grid-template-columns:1fr 1fr;gap:10px 22px;margin-top:30px;text-align:left;max-width:820px;margin-left:auto;margin-right:auto}
+    .member{padding:11px 15px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.04);font-size:15px;color:#EAF0FF}
+    .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:22px;height:calc(100vh - 130px);align-items:stretch}
+    .grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.03));border:1px solid var(--line);border-radius:24px;padding:20px;box-shadow:0 22px 54px rgba(0,0,0,.2)}
+    .card.compact{padding:16px}
+    .big-kpi{font-size:70px;font-weight:900;letter-spacing:-.07em;color:var(--gold);line-height:.95}
+    .formula{font-family:Consolas, monospace;background:rgba(0,0,0,.26);border:1px solid rgba(255,255,255,.13);border-radius:16px;padding:14px 16px;color:#fff;font-size:18px;margin:12px 0}
+    ul{margin-left:18px;color:var(--muted);font-size:17px;line-height:1.42}
+    li{margin:6px 0}
+    .pill-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:12px}
+    .pill{padding:8px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.055);font-size:14px;color:#ECF2FF}
+    .mini-stat{display:flex;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,.1);padding:8px 0;font-size:16px;color:var(--muted)}
+    .mini-stat strong{color:var(--text)}
+    .eda-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:22px;height:calc(100vh - 130px)}
+    .bars{display:flex;align-items:flex-end;gap:16px;height:180px;margin-top:8px;border-bottom:1px solid var(--line);padding:0 8px 8px}
+    .bar-wrap{flex:1;text-align:center;height:100%;display:flex;flex-direction:column;justify-content:flex-end;gap:7px}
+    .bar{border-radius:12px 12px 0 0;background:linear-gradient(180deg,var(--cyan),#1E7AFF);min-height:18px;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;font-weight:800;color:white;font-size:14px}
+    .bar.high{background:linear-gradient(180deg,var(--red),#B91C1C)}
+    .bar.med{background:linear-gradient(180deg,var(--gold),#B7791F)}
+    .bar.low{background:linear-gradient(180deg,var(--green),#047857)}
+    .bar-label{font-size:14px;color:var(--muted)}
+    .donut{
+      width:158px;height:158px;border-radius:50%;margin:auto;
+      background:conic-gradient(var(--green) 0 32.74%, var(--gold) 32.74% 75.03%, var(--red) 75.03% 100%);
+      position:relative;box-shadow:0 10px 35px rgba(0,0,0,.25)
+    }
+    .donut::after{content:"24.97%\A High";white-space:pre;position:absolute;inset:28px;background:var(--card);border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:20px;font-weight:900;color:var(--gold)}
+    .legend{display:grid;gap:8px;margin-top:13px}
+    .legend span{display:flex;align-items:center;justify-content:space-between;font-size:14px;color:var(--muted)}
+    .dot{width:11px;height:11px;border-radius:50%;display:inline-block;margin-right:8px}
+    .finding{font-size:24px;line-height:1.2;color:white;font-weight:800;margin:10px 0}
+    .small{font-size:14px;color:var(--muted);line-height:1.35}
+    .nav{position:fixed;bottom:22px;right:34px;display:flex;gap:10px;z-index:10}
+    .nav button{border:none;border-radius:14px;background:rgba(255,255,255,.09);color:white;padding:10px 14px;font-weight:700;cursor:pointer;border:1px solid var(--line)}
+    .counter{position:fixed;bottom:31px;left:42px;color:var(--muted);font-size:14px;z-index:10}
+    .two-columns{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;align-items:stretch}
+    .quote{border-left:4px solid var(--gold);padding-left:16px;margin-top:10px;color:#fff;font-size:18px;line-height:1.35}
+    .check{color:var(--green);font-weight:900}
+    .warn{color:var(--gold);font-weight:900}
+    .relation{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:15px;color:var(--muted)}
+    .relation strong{font-size:18px;color:var(--cyan)}
+    .tagline{font-size:20px;color:var(--muted);max-width:860px;margin:auto}
+    .footer-note{position:absolute;bottom:52px;left:58px;right:58px;color:rgba(255,255,255,.55);font-size:13px;text-align:center}
+    @media print{
+      body{overflow:visible;background:#fff;color:#111}
+      .slide{display:block;position:relative;page-break-after:always;background:#070B18;color:white}
+      .nav,.counter{display:none}
+    }
+  </style>
+</head>
+<body>
+  <main class="deck">
+    <section class="slide cover active">
+      <div class="cover-content">
+        <div class="uni">Universidad Privada Franz Tamayo</div>
+        <h1><span class="accent">EduAnalytics:</span><br>Análisis de patrones de uso de IA generativa y riesgo de burnout estudiantil</h1>
+        <div class="subject">Materia: MINERÍA DE DATOS</div>
+        <p class="tagline">Presentación oral y activa por grupos · Fases evaluadas: Entendimiento del negocio y Entendimiento de los datos mediante EDA</p>
+        <div class="team">
+          <div class="member">Milenka Melody Chuquimia Osco</div>
+          <div class="member">Edson Teddy Tito Chuquimia</div>
+          <div class="member">Carlos Daniel Valverde Mendoza</div>
+          <div class="member">Alvaro Luis Carlos del Carpio Blanco</div>
+          <div class="member">Marcelo Josue Escobar Chipana</div>
+        </div>
+      </div>
+      <div class="footer-note">Portada · Proyecto de Minería de Datos con metodología CRISP-DM</div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">Diapositiva 1 · Entendimiento del negocio</div>
+      <h2>Entendimiento del negocio</h2>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Objetivo de negocio del proyecto</h3>
+          <p>Identificar patrones de uso de IA generativa y hábitos académicos asociados con niveles elevados de riesgo de burnout, para apoyar la detección de perfiles de mayor riesgo y futuras estrategias de uso responsable de IA en estudiantes.</p>
+          <div class="pill-row">
+            <span class="pill">IA generativa</span>
+            <span class="pill">Hábitos académicos</span>
+            <span class="pill">Riesgo de burnout</span>
+            <span class="pill">Apoyo a decisiones</span>
+          </div>
+          <div class="quote">No se busca diagnosticar burnout clínico ni afirmar causalidad; se identifican asociaciones y patrones dentro del dataset.</div>
+        </div>
+
+        <div class="card">
+          <h3>Métrica principal / KPI</h3>
+          <div class="big-kpi">24,97%</div>
+          <p>Porcentaje de estudiantes clasificados con <b>riesgo alto de burnout</b>.</p>
+          <div class="formula">KPI = (N° High / N° Total) × 100<br>12.487 / 50.000 × 100 = 24,97%</div>
+          <div class="mini-stat"><span>Variable usada</span><strong>Burnout_Risk_Level</strong></div>
+          <div class="mini-stat"><span>Unidad de medida</span><strong>Porcentaje (%)</strong></div>
+          <div class="mini-stat"><span>Mejora tentativa</span><strong>Reducir respecto a 24,97%</strong></div>
+          <p class="small">La mejora es una meta futura; no es un resultado observado todavía.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide">
+      <div class="brand">Diapositiva 2 · Entendimiento de datos y EDA</div>
+      <h2>Entendimiento de los datos y EDA</h2>
+      <div class="eda-layout">
+        <div class="card">
+          <h3>1. ¿Qué datos tengo?</h3>
+          <div class="mini-stat"><span>Fuente</span><strong>Kaggle</strong></div>
+          <div class="mini-stat"><span>Archivo</span><strong>ai_student_impact_dataset</strong></div>
+          <div class="mini-stat"><span>Registros</span><strong>50.000 estudiantes</strong></div>
+          <div class="mini-stat"><span>Variables</span><strong>16 columnas</strong></div>
+          <div class="mini-stat"><span>Unidad de análisis</span><strong>Un estudiante</strong></div>
+          <div class="pill-row">
+            <span class="pill">Weekly_GenAI_Hours</span>
+            <span class="pill">Perceived_AI_Dependency</span>
+            <span class="pill">Anxiety_Level_During_Exams</span>
+            <span class="pill">Traditional_Study_Hours</span>
+            <span class="pill">Post_Semester_GPA</span>
+            <span class="pill">Burnout_Risk_Level</span>
+          </div>
+
+          <div class="two-columns" style="margin-top:16px">
+            <div class="card compact">
+              <h3>2. ¿Hay datos faltantes?</h3>
+              <p><span class="check">0</span> valores nulos y <span class="check">0</span> duplicados completos. No fue necesaria imputación en esta fase.</p>
+            </div>
+            <div class="card compact">
+              <h3>3. ¿Existen atípicos?</h3>
+              <p><span class="warn">Sí.</span> Principalmente en horas de IA. No se eliminan automáticamente porque pueden representar casos de interés.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="grid-3">
+            <div>
+              <h3>4. Distribución</h3>
+              <div class="donut"></div>
+              <div class="legend">
+                <span><span><i class="dot" style="background:var(--green)"></i>Low</span><b>32,74%</b></span>
+                <span><span><i class="dot" style="background:var(--gold)"></i>Medium</span><b>42,29%</b></span>
+                <span><span><i class="dot" style="background:var(--red)"></i>High</span><b>24,97%</b></span>
+              </div>
+            </div>
+            <div style="grid-column:span 2">
+              <h3>5. Relación entre variables</h3>
+              <div class="relation"><span>Horas IA ↔ Dependencia percibida</span><strong>r = 0,665</strong></div>
+              <div class="relation"><span>Dependencia IA ↔ Ansiedad</span><strong>r = 0,308</strong></div>
+              <div class="relation"><span>Horas IA ↔ Ansiedad</span><strong>r = 0,269</strong></div>
+              <div class="relation"><span>Horas IA ↔ Retención habilidades</span><strong>r = -0,118</strong></div>
+            </div>
+          </div>
+
+          <h3 style="margin-top:18px">6. Hallazgo interesante</h3>
+          <div class="finding">El grupo High usa mucha más IA por semana.</div>
+          <div class="bars">
+            <div class="bar-wrap"><div class="bar low" style="height:31%">4,64h</div><div class="bar-label">Low</div></div>
+            <div class="bar-wrap"><div class="bar med" style="height:48%">7,35h</div><div class="bar-label">Medium</div></div>
+            <div class="bar-wrap"><div class="bar high" style="height:100%">15,21h</div><div class="bar-label">High</div></div>
+          </div>
+          <p class="small" style="margin-top:10px">Interpretación: se observa asociación entre mayor uso de IA, mayor dependencia percibida, mayor ansiedad y mayor nivel de riesgo. No implica causalidad.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="counter" id="counter">1 / 3</div>
+  <div class="nav">
+    <button onclick="prevSlide()">◀ Anterior</button>
+    <button onclick="nextSlide()">Siguiente ▶</button>
+  </div>
+
+  <script>
+    const slides = [...document.querySelectorAll('.slide')];
+    let current = 0;
+    function showSlide(index){
+      current = (index + slides.length) % slides.length;
+      slides.forEach((s,i)=>s.classList.toggle('active', i === current));
+      document.getElementById('counter').textContent = `${current + 1} / ${slides.length}`;
+    }
+    function nextSlide(){ showSlide(current + 1); }
+    function prevSlide(){ showSlide(current - 1); }
+    document.addEventListener('keydown', e => {
+      if(e.key === 'ArrowRight' || e.key === ' ') nextSlide();
+      if(e.key === 'ArrowLeft') prevSlide();
+      if(e.key === 'Home') showSlide(0);
+      if(e.key === 'End') showSlide(slides.length - 1);
+    });
+  </script>
+</body>
+</html>
