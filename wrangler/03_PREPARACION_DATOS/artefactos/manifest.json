@@ -1,0 +1,343 @@
+{
+  "schema_version": 1,
+  "crisp_dm_phase": 3,
+  "population": "Estudiantes universitarios representados en el CSV",
+  "scope": "Clasificación multiclase retrospectiva sobre registros completos",
+  "input": {
+    "path": "dataset/ai_student_impact_dataset (1).csv",
+    "file": "ai_student_impact_dataset (1).csv",
+    "sha256": "afd5615d273f199988cf172fdb985c5d9298a018c2d386698ac4c7dc7328d694",
+    "rows": 50000,
+    "columns": 16,
+    "separator": ";",
+    "encoding": "utf-8-sig",
+    "class_counts": {
+      "Low": 16369,
+      "Medium": 21144,
+      "High": 12487
+    },
+    "high_kpi_percent_exact": "24.974"
+  },
+  "references": {
+    "README.md": "465bcac9c70daa4613a03f81d2cfcc5c74dfa940ff7c4908fa7534cdf962522b",
+    "docs/INFORMACION_GENERAL_PROYECTO_EDUANALYTICS.md": "9cd0cdb1ab0d1af239a29490396aaeed9fe13c41ca39ec74c3650268d2cff74a",
+    "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb": "7688bd9d410ce95ed2943887e27af11512f0cff3d9fcc5d59e543fea291d5aa4",
+    "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb": "d7d23266f58d2b37740e8039cf9340a6b1916515a558ba6b0eabb6ecd86715bc"
+  },
+  "previous_csv_checks": [
+    {
+      "Notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+      "Ruta CSV declarada": "dataset/ai_student_impact_dataset (1).csv",
+      "SHA-256 guardado": "afd5615d273f199988cf172fdb985c5d9298a018c2d386698ac4c7dc7328d694",
+      "Coincide": true
+    },
+    {
+      "Notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+      "Ruta CSV declarada": "dataset/ai_student_impact_dataset (1).csv",
+      "SHA-256 guardado": "afd5615d273f199988cf172fdb985c5d9298a018c2d386698ac4c7dc7328d694",
+      "Coincide": true
+    }
+  ],
+  "split": {
+    "seed": 42,
+    "proportions": {
+      "train": 0.7,
+      "validation": 0.15,
+      "test": 0.15
+    },
+    "stratification": "Burnout_Risk_Level",
+    "procedure": "train_test_split test_size=0.30; remainder split test_size=0.50; seed=42 in both",
+    "ordering": "Orden devuelto por train_test_split, sin ordenar ni volver a barajar",
+    "group_check": "Student_ID único: no hay grupos repetidos; bloquear división por filas si aparecen",
+    "row_id": "Posición de fila original desde cero; sin cabecera"
+  },
+  "schema": {
+    "original_columns": [
+      "Student_ID",
+      "Major_Category",
+      "Year_of_Study",
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Tool_Diversity",
+      "Paid_Subscription",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Institutional_Policy",
+      "Anxiety_Level_During_Exams",
+      "Post_Semester_GPA",
+      "Skill_Retention_Score",
+      "Burnout_Risk_Level"
+    ],
+    "original_dtypes": {
+      "Student_ID": "int64",
+      "Major_Category": "object",
+      "Year_of_Study": "object",
+      "Pre_Semester_GPA": "float64",
+      "Weekly_GenAI_Hours": "float64",
+      "Primary_Use_Case": "object",
+      "Prompt_Engineering_Skill": "object",
+      "Tool_Diversity": "int64",
+      "Paid_Subscription": "bool",
+      "Traditional_Study_Hours": "float64",
+      "Perceived_AI_Dependency": "int64",
+      "Institutional_Policy": "object",
+      "Anxiety_Level_During_Exams": "int64",
+      "Post_Semester_GPA": "float64",
+      "Skill_Retention_Score": "float64",
+      "Burnout_Risk_Level": "object"
+    },
+    "partition_columns": [
+      "Student_ID",
+      "Major_Category",
+      "Year_of_Study",
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Tool_Diversity",
+      "Paid_Subscription",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Institutional_Policy",
+      "Anxiety_Level_During_Exams",
+      "Post_Semester_GPA",
+      "Skill_Retention_Score",
+      "Burnout_Risk_Level",
+      "_row_id"
+    ],
+    "predictors": [
+      "Major_Category",
+      "Year_of_Study",
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Tool_Diversity",
+      "Paid_Subscription",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Institutional_Policy",
+      "Anxiety_Level_During_Exams",
+      "Post_Semester_GPA",
+      "Skill_Retention_Score"
+    ],
+    "numeric": [
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Tool_Diversity",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Anxiety_Level_During_Exams",
+      "Post_Semester_GPA",
+      "Skill_Retention_Score"
+    ],
+    "categorical": [
+      "Major_Category",
+      "Year_of_Study",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Institutional_Policy"
+    ],
+    "boolean": [
+      "Paid_Subscription"
+    ],
+    "target": "Burnout_Risk_Level",
+    "target_classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "target_encoding": "Etiquetas originales de texto, sin mapeo numérico",
+    "trace_columns": [
+      "_row_id",
+      "Student_ID"
+    ],
+    "not_included": [
+      "Student_ID",
+      "Burnout_Risk_Level",
+      "_row_id",
+      "GPA_Change"
+    ]
+  },
+  "quality": {
+    "Celdas nulas": 0,
+    "Campos vacíos/espacios": 0,
+    "Duplicados completos excedentes": 0,
+    "IDs repetidos excedentes": 0,
+    "Objetivos inválidos": 0,
+    "Incidencias de rango": 0,
+    "Filas con espacios extremos": 0,
+    "Grupos de variantes internas": 0
+  },
+  "decisions": [
+    {
+      "Problema o resultado del control": "No se observan nulos",
+      "Variables/registros afectados": "Todas las columnas",
+      "Regla aplicada": "Conservar; no imputar",
+      "Justificación": "No existe ausencia que corregir",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "No se observan duplicados completos",
+      "Variables/registros afectados": "Todas las filas",
+      "Regla aplicada": "Conservar; no deduplicar",
+      "Justificación": "Cada registro es distinto",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "No se repite Student_ID",
+      "Variables/registros afectados": "Student_ID",
+      "Regla aplicada": "División estratificada por filas",
+      "Justificación": "Un registro por identificador en el CSV actual",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "Sin variantes internas ni espacios extremos",
+      "Variables/registros afectados": "Variables categóricas",
+      "Regla aplicada": "Mantener etiquetas originales",
+      "Justificación": "No se requiere normalización de registros",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "Diferencias textuales con docs",
+      "Variables/registros afectados": "Primary_Use_Case",
+      "Regla aplicada": "Documentar sin reemplazar valores",
+      "Justificación": "Summarizing_Reading y Direct_Answer_Generation son los nombres del CSV",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "Sin incumplimientos de rangos declarados",
+      "Variables/registros afectados": "Ocho variables numéricas",
+      "Regla aplicada": "Conservar",
+      "Justificación": "No hay evidencia de valores fuera de los criterios provisionales",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "Extremos IQR plausibles señalados en Fase 2",
+      "Variables/registros afectados": "Horas de IA/estudio, dependencia, GPA y retención",
+      "Regla aplicada": "Conservar; sin winsorización ni eliminación",
+      "Justificación": "Un extremo no es automáticamente un error; posible interés para High",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    },
+    {
+      "Problema o resultado del control": "Etiqueta válida",
+      "Variables/registros afectados": "Burnout_Risk_Level",
+      "Regla aplicada": "Conservar Low, Medium y High como texto",
+      "Justificación": "No requiere codificación numérica para los modelos previstos",
+      "Registros modificados": 0,
+      "Registros excluidos": 0
+    }
+  ],
+  "changes": {
+    "records_modified": 0,
+    "records_excluded": 0,
+    "eligible_rows": 50000,
+    "added_trace_column": "_row_id",
+    "high_kpi_percent_after": "24.974",
+    "kpi_change_percentage_points": "0"
+  },
+  "preprocessing": {
+    "logistica": "StandardScaler numérico, OneHotEncoder categórico, booleanos 0/1",
+    "arbol": "Numéricas sin escalado, OneHotEncoder categórico, booleanos 0/1",
+    "unknown_categories": "handle_unknown=ignore",
+    "imputation": null,
+    "balancing": null,
+    "learned_parameters_exported": false,
+    "transformed_matrices_exported": false
+  },
+  "partitions": {
+    "train": {
+      "file": "train.csv",
+      "rows": 35000,
+      "columns": 17,
+      "class_counts": {
+        "Low": 11458,
+        "Medium": 14801,
+        "High": 8741
+      },
+      "high_kpi_percent": "24.97428571428571428571428571"
+    },
+    "validation": {
+      "file": "validation.csv",
+      "rows": 7500,
+      "columns": 17,
+      "class_counts": {
+        "Low": 2455,
+        "Medium": 3172,
+        "High": 1873
+      },
+      "high_kpi_percent": "24.97333333333333333333333333"
+    },
+    "test": {
+      "file": "test.csv",
+      "rows": 7500,
+      "columns": 17,
+      "class_counts": {
+        "Low": 2456,
+        "Medium": 3171,
+        "High": 1873
+      },
+      "high_kpi_percent": "24.97333333333333333333333333"
+    }
+  },
+  "versions": {
+    "Python": "3.10.6",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "ipykernel": "7.3.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.1"
+  },
+  "limitations": [
+    "Procedencia y carácter sintético no confirmados; sin diagnóstico clínico",
+    "Fórmula de etiqueta desconocida y posible circularidad",
+    "Disponibilidad temporal no acreditada; sin detección anticipada",
+    "Fase 2 exploró el CSV completo: prueba no es una cohorte externa nunca inspeccionada"
+  ],
+  "artifacts": {
+    "train.csv": {
+      "sha256": "ad1350d1a98ea6cbb8f52d572c930257f5f3010033a0ca9969109d32e15e15fc",
+      "bytes": 4327568
+    },
+    "validation.csv": {
+      "sha256": "218af598fa78428fddafd4b530d3563d985a7ada0a2b4ffe758ea2cff3369e0e",
+      "bytes": 926684
+    },
+    "test.csv": {
+      "sha256": "380f4be4f1d48fed8b44a688bdfc9990654238b9ecb9943f18c2651ecc1fc4b8",
+      "bytes": 927752
+    },
+    "variables.csv": {
+      "sha256": "33e43397c774e5b474137b338e6e65634573c71b4a35a93164c069d14de12e89",
+      "bytes": 3116
+    },
+    "decisiones_limpieza.csv": {
+      "sha256": "30da68b598fc5ddb5935263d6a367efc7a113739cbedda0ba1828675a5db9aba",
+      "bytes": 1275
+    },
+    "preprocesamiento.py": {
+      "sha256": "e5733d3c670a1929edcf8f2f76433c23d3969a00cbad3782e421c7981641315d",
+      "bytes": 4661
+    },
+    "INSTRUCCIONES_FASE4.md": {
+      "sha256": "52626642b3c640e416f903dc8749c007349222d8c977befb7ae6679613854d17",
+      "bytes": 4456
+    },
+    "requirements_preparacion.txt": {
+      "sha256": "bf1c2e13ed172cc1b6fa5ee19976d7af22be61a2b00dfe1a402fd491504022b4",
+      "bytes": 196
+    }
+  }
+}

@@ -1,0 +1,9 @@
+Problema o resultado del control;Variables/registros afectados;Regla aplicada;Justificación;Registros modificados;Registros excluidos
+No se observan nulos;Todas las columnas;"Conservar; no imputar";No existe ausencia que corregir;0;0
+No se observan duplicados completos;Todas las filas;"Conservar; no deduplicar";Cada registro es distinto;0;0
+No se repite Student_ID;Student_ID;División estratificada por filas;Un registro por identificador en el CSV actual;0;0
+Sin variantes internas ni espacios extremos;Variables categóricas;Mantener etiquetas originales;No se requiere normalización de registros;0;0
+Diferencias textuales con docs;Primary_Use_Case;Documentar sin reemplazar valores;Summarizing_Reading y Direct_Answer_Generation son los nombres del CSV;0;0
+Sin incumplimientos de rangos declarados;Ocho variables numéricas;Conservar;No hay evidencia de valores fuera de los criterios provisionales;0;0
+Extremos IQR plausibles señalados en Fase 2;Horas de IA/estudio, dependencia, GPA y retención;"Conservar; sin winsorización ni eliminación";"Un extremo no es automáticamente un error; posible interés para High";0;0
+Etiqueta válida;Burnout_Risk_Level;Conservar Low, Medium y High como texto;No requiere codificación numérica para los modelos previstos;0;0

@@ -25,3 +25,9 @@ El proyecto busca identificar patrones de uso de IA generativa y hábitos acadé
 El proyecto analiza asociaciones presentes en el dataset; la etiqueta de riesgo de burnout no equivale a un diagnóstico clínico.
 
 Para más detalles, consultar la [información general del proyecto](docs/INFORMACION_GENERAL_PROYECTO_EDUANALYTICS.md).
+
+## Entorno de Ejecución Local
+
+Este proyecto utiliza un entorno virtual (`.venv`) unificado para garantizar la consistencia en la ejecución de los notebooks.
+- **Versión de Python alineada:** `3.10.6`
+- **Dependencias:** Las librerías necesarias (`pandas`, `numpy`, `matplotlib`, `seaborn`, `statsmodels`, `scikit-learn`, `ipykernel`) se instalan localmente desde el `requirements.txt`. Asegúrate de seleccionar el intérprete del `.venv` en tu editor antes de ejecutar cualquier notebook.

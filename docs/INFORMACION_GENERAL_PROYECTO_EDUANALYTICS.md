@@ -76,7 +76,7 @@ El proyecto busca generar evidencia analítica que permita:
 
 ### Nombre del archivo
 
-`ai_student_impact_dataset.csv`
+`ai_student_impact_dataset (1).csv`
 
 ### Fuente
 

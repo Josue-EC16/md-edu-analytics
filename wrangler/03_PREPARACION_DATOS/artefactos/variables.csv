@@ -1,0 +1,19 @@
+Variable;Tipo observado;Incluida en X;Papel;Transformación prevista;Justificación
+Student_ID;int64;False;Trazabilidad;Sin transformación predictora;Identificador sin significado sustantivo
+Major_Category;object;True;Predictor categórico;One-hot: categorías aprendidas solo con entrenamiento;Contexto o finalidad nominal sin orden numérico
+Year_of_Study;object;True;Predictor categórico;One-hot: categorías aprendidas solo con entrenamiento;Evitar distancias artificiales y ambigüedad de Graduate
+Pre_Semester_GPA;float64;True;Predictor numérico;"StandardScaler en logística; valores originales en árbol";Característica académica o hábito pertinente al objetivo
+Weekly_GenAI_Hours;float64;True;Predictor numérico;"StandardScaler en logística; valores originales en árbol";Característica académica o hábito pertinente al objetivo
+Primary_Use_Case;object;True;Predictor categórico;One-hot: categorías aprendidas solo con entrenamiento;Contexto o finalidad nominal sin orden numérico
+Prompt_Engineering_Skill;object;True;Predictor categórico;One-hot: categorías aprendidas solo con entrenamiento;Evitar distancias artificiales y ambigüedad de Graduate
+Tool_Diversity;int64;True;Predictor numérico;"StandardScaler en logística; valores originales en árbol";Característica académica o hábito pertinente al objetivo
+Paid_Subscription;bool;True;Predictor booleano;"False→0; True→1";Indicador binario del registro
+Traditional_Study_Hours;float64;True;Predictor numérico;"StandardScaler en logística; valores originales en árbol";Característica académica o hábito pertinente al objetivo
+Perceived_AI_Dependency;int64;True;Predictor numérico (puntuación ordinal);"StandardScaler en logística; valores originales en árbol";Característica académica o hábito pertinente al objetivo
+Institutional_Policy;object;True;Predictor categórico;One-hot: categorías aprendidas solo con entrenamiento;Contexto o finalidad nominal sin orden numérico
+Anxiety_Level_During_Exams;int64;True;Predictor numérico (puntuación ordinal);"StandardScaler en logística; valores originales en árbol";"Medición del registro completo; inclusión retrospectiva, revisar disponibilidad futura"
+Post_Semester_GPA;float64;True;Predictor numérico;"StandardScaler en logística; valores originales en árbol";"Medición del registro completo; inclusión retrospectiva, revisar disponibilidad futura"
+Skill_Retention_Score;float64;True;Predictor numérico;"StandardScaler en logística; valores originales en árbol";"Medición del registro completo; inclusión retrospectiva, revisar disponibilidad futura"
+Burnout_Risk_Level;object;False;Objetivo multiclase;Sin transformación predictora;"Etiqueta objetivo; fuga directa si se incluye en X"
+_row_id;int64 (auxiliar);False;Trazabilidad;Posición de fila original desde cero;Rastrear cobertura y pertenencia sin usarla como predictor
+GPA_Change;No incorporada;False;Propuesta académica secundaria;"Post_Semester_GPA − Pre_Semester_GPA; no aplicada al conjunto principal";Evitar redundancia con ambos GPA y ampliar el alcance a regresión o clustering
