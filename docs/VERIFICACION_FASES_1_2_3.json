@@ -1,0 +1,556 @@
+{
+  "consultation_date": "2026-10-09",
+  "status": "Fases 1–3 verificadas; Fase 4 pendiente",
+  "working_validation": {
+    "Python": "3.10.6",
+    "source_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+    "rows": 50000,
+    "columns": 16,
+    "nulls": 0,
+    "complete_duplicates": 0,
+    "id_duplicates": 0,
+    "classes": {
+      "Low": 16369,
+      "Medium": 21144,
+      "High": 12487
+    },
+    "kpi_high_percent": "24.974",
+    "partitions": [
+      {
+        "partition": "train",
+        "rows": 35000,
+        "Medium": 14801,
+        "Low": 11458,
+        "High": 8741
+      },
+      {
+        "partition": "validation",
+        "rows": 7500,
+        "Medium": 3172,
+        "Low": 2455,
+        "High": 1873
+      },
+      {
+        "partition": "test",
+        "rows": 7500,
+        "Medium": 3171,
+        "Low": 2456,
+        "High": 1873
+      }
+    ],
+    "reconstruction": "EXACT",
+    "overlap": 0,
+    "predictors": 14,
+    "documented_means_checked": 18,
+    "transforms": {
+      "logistica": {
+        "train_shape": [
+          35000,
+          30
+        ],
+        "unknown_categories": "PASS",
+        "fresh_unfitted": "PASS"
+      },
+      "arbol": {
+        "train_shape": [
+          35000,
+          30
+        ],
+        "unknown_categories": "PASS",
+        "fresh_unfitted": "PASS"
+      }
+    },
+    "notebooks": [
+      {
+        "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+        "code_cells": 4,
+        "errors": 0,
+        "sha256": "bb1a9e890bebc5ba321d867ff25012f00114f758a5e65e642c2c8bfad57e3c44"
+      },
+      {
+        "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+        "code_cells": 20,
+        "errors": 0,
+        "sha256": "605b58780dc707ef06e69e0fe8f752d00fe4556487565132c023d0ce99c0088b"
+      },
+      {
+        "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+        "code_cells": 14,
+        "errors": 0,
+        "sha256": "786ecdf1075c3208047976d4c7d963e058574e22b420c7c8392a74844c741a97"
+      },
+      {
+        "notebook": "notebook_eduanalytics_md.ipynb",
+        "code_cells": 20,
+        "errors": 0,
+        "sha256": "95da217224c9840e8303dc19c35149bec4d5bc553088c4d55083a8ce6613d58c"
+      }
+    ],
+    "manifest_hashes": "PASS",
+    "execution": [
+      {
+        "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+        "desde": "raiz",
+        "seconds": 1.85,
+        "errors": 0
+      },
+      {
+        "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+        "desde": "raiz",
+        "seconds": 12.19,
+        "errors": 0
+      },
+      {
+        "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+        "desde": "raiz",
+        "seconds": 8.16,
+        "errors": 0
+      },
+      {
+        "notebook": "notebook_eduanalytics_md.ipynb",
+        "desde": "raiz",
+        "seconds": 3.22,
+        "errors": 0
+      }
+    ]
+  },
+  "clean_git_validation": {
+    "initial": {
+      "Python": "3.10.6",
+      "source_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+      "rows": 50000,
+      "columns": 16,
+      "nulls": 0,
+      "complete_duplicates": 0,
+      "id_duplicates": 0,
+      "classes": {
+        "Low": 16369,
+        "Medium": 21144,
+        "High": 12487
+      },
+      "kpi_high_percent": "24.974",
+      "partitions": [
+        {
+          "partition": "train",
+          "rows": 35000,
+          "Medium": 14801,
+          "Low": 11458,
+          "High": 8741
+        },
+        {
+          "partition": "validation",
+          "rows": 7500,
+          "Medium": 3172,
+          "Low": 2455,
+          "High": 1873
+        },
+        {
+          "partition": "test",
+          "rows": 7500,
+          "Medium": 3171,
+          "Low": 2456,
+          "High": 1873
+        }
+      ],
+      "reconstruction": "EXACT",
+      "overlap": 0,
+      "predictors": 14,
+      "documented_means_checked": 18,
+      "transforms": {
+        "logistica": {
+          "train_shape": [
+            35000,
+            30
+          ],
+          "unknown_categories": "PASS",
+          "fresh_unfitted": "PASS"
+        },
+        "arbol": {
+          "train_shape": [
+            35000,
+            30
+          ],
+          "unknown_categories": "PASS",
+          "fresh_unfitted": "PASS"
+        }
+      },
+      "notebooks": [
+        {
+          "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+          "code_cells": 4,
+          "errors": 0,
+          "sha256": "bb1a9e890bebc5ba321d867ff25012f00114f758a5e65e642c2c8bfad57e3c44"
+        },
+        {
+          "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+          "code_cells": 20,
+          "errors": 0,
+          "sha256": "605b58780dc707ef06e69e0fe8f752d00fe4556487565132c023d0ce99c0088b"
+        },
+        {
+          "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+          "code_cells": 14,
+          "errors": 0,
+          "sha256": "786ecdf1075c3208047976d4c7d963e058574e22b420c7c8392a74844c741a97"
+        },
+        {
+          "notebook": "notebook_eduanalytics_md.ipynb",
+          "code_cells": 20,
+          "errors": 0,
+          "sha256": "95da217224c9840e8303dc19c35149bec4d5bc553088c4d55083a8ce6613d58c"
+        }
+      ],
+      "manifest_hashes": "PASS",
+      "execution": []
+    },
+    "root": {
+      "Python": "3.10.6",
+      "source_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+      "rows": 50000,
+      "columns": 16,
+      "nulls": 0,
+      "complete_duplicates": 0,
+      "id_duplicates": 0,
+      "classes": {
+        "Low": 16369,
+        "Medium": 21144,
+        "High": 12487
+      },
+      "kpi_high_percent": "24.974",
+      "partitions": [
+        {
+          "partition": "train",
+          "rows": 35000,
+          "Medium": 14801,
+          "Low": 11458,
+          "High": 8741
+        },
+        {
+          "partition": "validation",
+          "rows": 7500,
+          "Medium": 3172,
+          "Low": 2455,
+          "High": 1873
+        },
+        {
+          "partition": "test",
+          "rows": 7500,
+          "Medium": 3171,
+          "Low": 2456,
+          "High": 1873
+        }
+      ],
+      "reconstruction": "EXACT",
+      "overlap": 0,
+      "predictors": 14,
+      "documented_means_checked": 18,
+      "transforms": {
+        "logistica": {
+          "train_shape": [
+            35000,
+            30
+          ],
+          "unknown_categories": "PASS",
+          "fresh_unfitted": "PASS"
+        },
+        "arbol": {
+          "train_shape": [
+            35000,
+            30
+          ],
+          "unknown_categories": "PASS",
+          "fresh_unfitted": "PASS"
+        }
+      },
+      "notebooks": [
+        {
+          "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+          "code_cells": 4,
+          "errors": 0,
+          "sha256": "bb1a9e890bebc5ba321d867ff25012f00114f758a5e65e642c2c8bfad57e3c44"
+        },
+        {
+          "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+          "code_cells": 20,
+          "errors": 0,
+          "sha256": "605b58780dc707ef06e69e0fe8f752d00fe4556487565132c023d0ce99c0088b"
+        },
+        {
+          "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+          "code_cells": 14,
+          "errors": 0,
+          "sha256": "786ecdf1075c3208047976d4c7d963e058574e22b420c7c8392a74844c741a97"
+        },
+        {
+          "notebook": "notebook_eduanalytics_md.ipynb",
+          "code_cells": 20,
+          "errors": 0,
+          "sha256": "95da217224c9840e8303dc19c35149bec4d5bc553088c4d55083a8ce6613d58c"
+        }
+      ],
+      "manifest_hashes": "PASS",
+      "execution": [
+        {
+          "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+          "desde": "raiz",
+          "seconds": 1.87,
+          "errors": 0
+        },
+        {
+          "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+          "desde": "raiz",
+          "seconds": 14.98,
+          "errors": 0
+        },
+        {
+          "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+          "desde": "raiz",
+          "seconds": 6.88,
+          "errors": 0
+        },
+        {
+          "notebook": "notebook_eduanalytics_md.ipynb",
+          "desde": "raiz",
+          "seconds": 3.26,
+          "errors": 0
+        }
+      ]
+    },
+    "folders": {
+      "Python": "3.10.6",
+      "source_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+      "rows": 50000,
+      "columns": 16,
+      "nulls": 0,
+      "complete_duplicates": 0,
+      "id_duplicates": 0,
+      "classes": {
+        "Low": 16369,
+        "Medium": 21144,
+        "High": 12487
+      },
+      "kpi_high_percent": "24.974",
+      "partitions": [
+        {
+          "partition": "train",
+          "rows": 35000,
+          "Medium": 14801,
+          "Low": 11458,
+          "High": 8741
+        },
+        {
+          "partition": "validation",
+          "rows": 7500,
+          "Medium": 3172,
+          "Low": 2455,
+          "High": 1873
+        },
+        {
+          "partition": "test",
+          "rows": 7500,
+          "Medium": 3171,
+          "Low": 2456,
+          "High": 1873
+        }
+      ],
+      "reconstruction": "EXACT",
+      "overlap": 0,
+      "predictors": 14,
+      "documented_means_checked": 18,
+      "transforms": {
+        "logistica": {
+          "train_shape": [
+            35000,
+            30
+          ],
+          "unknown_categories": "PASS",
+          "fresh_unfitted": "PASS"
+        },
+        "arbol": {
+          "train_shape": [
+            35000,
+            30
+          ],
+          "unknown_categories": "PASS",
+          "fresh_unfitted": "PASS"
+        }
+      },
+      "notebooks": [
+        {
+          "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+          "code_cells": 4,
+          "errors": 0,
+          "sha256": "bb1a9e890bebc5ba321d867ff25012f00114f758a5e65e642c2c8bfad57e3c44"
+        },
+        {
+          "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+          "code_cells": 20,
+          "errors": 0,
+          "sha256": "605b58780dc707ef06e69e0fe8f752d00fe4556487565132c023d0ce99c0088b"
+        },
+        {
+          "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+          "code_cells": 14,
+          "errors": 0,
+          "sha256": "786ecdf1075c3208047976d4c7d963e058574e22b420c7c8392a74844c741a97"
+        },
+        {
+          "notebook": "notebook_eduanalytics_md.ipynb",
+          "code_cells": 20,
+          "errors": 0,
+          "sha256": "95da217224c9840e8303dc19c35149bec4d5bc553088c4d55083a8ce6613d58c"
+        }
+      ],
+      "manifest_hashes": "PASS",
+      "execution": [
+        {
+          "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+          "desde": "carpetas",
+          "seconds": 1.76,
+          "errors": 0
+        },
+        {
+          "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+          "desde": "carpetas",
+          "seconds": 11.25,
+          "errors": 0
+        },
+        {
+          "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+          "desde": "carpetas",
+          "seconds": 6.84,
+          "errors": 0
+        },
+        {
+          "notebook": "notebook_eduanalytics_md.ipynb",
+          "desde": "carpetas",
+          "seconds": 3.26,
+          "errors": 0
+        }
+      ]
+    }
+  },
+  "byte_identical_notebooks": true,
+  "manifest_sha256": "50cd682633fde10258bbb8312d2f88f084077f6f537c17e47b2fe009fd2d3981",
+  "git_content": {
+    "tested_tree_before_audit_reports": "37f8eaf1fde0e1833c7ae96c66a895ba4d5e93f3",
+    "tested_files": 28,
+    "canonical_matches_worktree": true,
+    "export_matches_canonical": true,
+    "excluded_environment_and_cache": true,
+    "final_index_files": 30,
+    "ignored_still_tracked": 0
+  },
+  "git_tracking": {
+    "venv_removed_from_index": 26595,
+    "venv_preserved_on_disk": true,
+    "ignored_still_tracked": [],
+    "modified_project_files": [
+      "README.md",
+      "docs/DICCIONARIO_DATOS.md",
+      "docs/ENTORNO_PROYECTO.md",
+      "docs/INFORMACION_GENERAL_PROYECTO_EDUANALYTICS.md",
+      "notebook_eduanalytics_md.ipynb",
+      "presentacion_eduanalytics.html",
+      "reportes_analisis_dataset_principal.html",
+      "requirements.txt",
+      "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+      "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+      "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+      "wrangler/03_PREPARACION_DATOS/artefactos/INSTRUCCIONES_FASE4.md",
+      "wrangler/03_PREPARACION_DATOS/artefactos/decisiones_limpieza.csv",
+      "wrangler/03_PREPARACION_DATOS/artefactos/manifest.json",
+      "wrangler/03_PREPARACION_DATOS/artefactos/preprocesamiento.py",
+      "wrangler/03_PREPARACION_DATOS/artefactos/requirements_preparacion.txt"
+    ],
+    "created_project_files": [
+      ".gitattributes",
+      ".gitignore",
+      "docs/PROCEDENCIA_DATASET.md",
+      "docs/VERIFICACION_FASES_1_2_3.json",
+      "docs/VERIFICACION_FASES_1_2_3.md",
+      "requirements-lock.txt",
+      "tools/verificar_html.js",
+      "tools/verificar_proyecto.py"
+    ]
+  },
+  "environments": {
+    "env": {
+      "python": "Python 3.10.6",
+      "pip_check": "No broken requirements found.",
+      "resolved_packages": 66
+    },
+    "env_git": {
+      "python": "Python 3.10.6",
+      "pip_check": "No broken requirements found.",
+      "resolved_packages": 66
+    }
+  },
+  "direct_versions": {
+    "Python": "3.10.6",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "ipykernel": "7.3.0",
+    "nbformat": "5.11.1",
+    "nbclient": "0.11.0",
+    "nbconvert": "7.17.1",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "ipython": "8.39.0"
+  },
+  "partitions_byte_unchanged": {
+    "train": true,
+    "validation": true,
+    "test": true
+  },
+  "memberships_and_order_unchanged": true,
+  "quality": {
+    "Celdas nulas": 0,
+    "Campos vacíos/espacios": 0,
+    "Duplicados completos excedentes": 0,
+    "IDs repetidos excedentes": 0,
+    "Objetivos inválidos": 0,
+    "Incidencias de rango": 0,
+    "Filas con espacios extremos": 0,
+    "Grupos de variantes internas": 0
+  },
+  "source_comparison": {
+    "original_sha256": "4d911088c4b12d60a450a9acae6b606f4119ebbb48679518e427a4fc00778472",
+    "local_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+    "semantic_sha256": "21b6b0658b1c909045bed401a821f417f82bb9f86795ff9f346473339379d23d",
+    "rows": 50000,
+    "columns": 16,
+    "values_equal_decimal_and_text": true,
+    "different_numeric_representations": 10369
+  },
+  "html": {
+    "Node": "v22.12.0",
+    "report": "PASS",
+    "csv_rows": 50000,
+    "csv_columns": 16,
+    "classes": {
+      "Low": 16369,
+      "Medium": 21144,
+      "High": 12487
+    },
+    "high_kpi_percent": "24.974",
+    "charts_finite": 4,
+    "upload_lf_crlf": "PASS",
+    "altered_file_rejected": "PASS",
+    "presentation_navigation": "PASS",
+    "slides": 3,
+    "browser_rendering": "PENDING: prueba con DOM y Chart simulados, sin navegador."
+  },
+  "figures_reviewed": {
+    "phase2": 11,
+    "complement": 5
+  },
+  "pending": [
+    "Validación visual de HTML y carga real de CDN en navegador no disponible",
+    "Fecha original de descarga, muestreo y recolección acreditados, instrumentos y disponibilidad temporal",
+    "Fórmula de Burnout_Risk_Level y confirmación de origen sintético",
+    "Validación externa y generalización institucional; clasificación y métricas de Fase 4"
+  ]
+}

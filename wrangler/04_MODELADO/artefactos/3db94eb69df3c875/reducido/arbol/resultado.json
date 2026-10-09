@@ -1,0 +1,218 @@
+{
+  "best_params": {
+    "clasificador__ccp_alpha": 0.0,
+    "clasificador__class_weight": null,
+    "clasificador__max_depth": 5,
+    "clasificador__min_samples_leaf": 10,
+    "clasificador__min_samples_split": 2
+  },
+  "cv": {
+    "configurations": 16,
+    "fits": 81,
+    "fold_scores": [
+      0.5309590143227346,
+      0.537897198387562,
+      0.5180114184880756,
+      0.5220016599609676,
+      0.5216610268959524
+    ],
+    "macro_f1_mean": 0.5261060636110585,
+    "macro_f1_std": 0.007276121910965748
+  },
+  "estimator_classes": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "experiment_id": "3db94eb69df3c875",
+  "interpretation": {
+    "depth": 5,
+    "estimator_classes": [
+      "High",
+      "Low",
+      "Medium"
+    ],
+    "feature_names": [
+      "numericas__Pre_Semester_GPA",
+      "numericas__Weekly_GenAI_Hours",
+      "numericas__Tool_Diversity",
+      "numericas__Traditional_Study_Hours",
+      "numericas__Perceived_AI_Dependency",
+      "numericas__Anxiety_Level_During_Exams",
+      "categoricas__Major_Category_Arts",
+      "categoricas__Major_Category_Business",
+      "categoricas__Major_Category_Humanities",
+      "categoricas__Major_Category_Medical",
+      "categoricas__Major_Category_STEM",
+      "categoricas__Year_of_Study_Freshman",
+      "categoricas__Year_of_Study_Graduate",
+      "categoricas__Year_of_Study_Junior",
+      "categoricas__Year_of_Study_Senior",
+      "categoricas__Year_of_Study_Sophomore",
+      "categoricas__Primary_Use_Case_Copywriting/Drafting",
+      "categoricas__Primary_Use_Case_Debugging/Troubleshooting",
+      "categoricas__Primary_Use_Case_Direct_Answer_Generation",
+      "categoricas__Primary_Use_Case_Ideation",
+      "categoricas__Primary_Use_Case_Summarizing_Reading",
+      "categoricas__Prompt_Engineering_Skill_Advanced",
+      "categoricas__Prompt_Engineering_Skill_Beginner",
+      "categoricas__Prompt_Engineering_Skill_Intermediate",
+      "categoricas__Institutional_Policy_Actively_Encouraged",
+      "categoricas__Institutional_Policy_Allowed_With_Citation",
+      "categoricas__Institutional_Policy_Strict_Ban",
+      "booleanas__Paid_Subscription"
+    ],
+    "leaves": 32,
+    "nodes": 63,
+    "transformed_features": 28
+  },
+  "model": "arbol",
+  "overfit_gap": 0.0002267020149896437,
+  "predictors": [
+    "Major_Category",
+    "Year_of_Study",
+    "Pre_Semester_GPA",
+    "Weekly_GenAI_Hours",
+    "Primary_Use_Case",
+    "Prompt_Engineering_Skill",
+    "Tool_Diversity",
+    "Paid_Subscription",
+    "Traditional_Study_Hours",
+    "Perceived_AI_Dependency",
+    "Institutional_Policy",
+    "Anxiety_Level_During_Exams"
+  ],
+  "scenario": "reducido",
+  "train": {
+    "accuracy": 0.5260285714285714,
+    "by_class": {
+      "High": {
+        "f1": 0.5698324022346368,
+        "precision": 0.6312934631432545,
+        "precision_undefined": false,
+        "recall": 0.5192769705983297,
+        "support": 8741
+      },
+      "Low": {
+        "f1": 0.5458559100943207,
+        "precision": 0.5053132198855614,
+        "precision_undefined": false,
+        "recall": 0.5934718100890207,
+        "support": 11458
+      },
+      "Medium": {
+        "f1": 0.48514783563147423,
+        "precision": 0.49271929213404864,
+        "precision_undefined": false,
+        "recall": 0.4778055536788055,
+        "support": 14801
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        6800,
+        4192,
+        466
+      ],
+      [
+        5544,
+        7072,
+        2185
+      ],
+      [
+        1113,
+        3089,
+        4539
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.5934718100890207,
+        0.3658579158666434,
+        0.04067027404433583
+      ],
+      [
+        0.37456928585906357,
+        0.4778055536788055,
+        0.14762516046213095
+      ],
+      [
+        0.1273309689966823,
+        0.353392060404988,
+        0.5192769705983297
+      ]
+    ],
+    "macro_f1": 0.5336120493201439
+  },
+  "validation": {
+    "accuracy": 0.5257333333333334,
+    "by_class": {
+      "High": {
+        "f1": 0.5713460427498556,
+        "precision": 0.6224040276903713,
+        "precision_undefined": false,
+        "recall": 0.5280298985584624,
+        "support": 1873
+      },
+      "Low": {
+        "f1": 0.5445656261752538,
+        "precision": 0.5057631854697869,
+        "precision_undefined": false,
+        "recall": 0.589816700610998,
+        "support": 2455
+      },
+      "Medium": {
+        "f1": 0.4842443729903537,
+        "precision": 0.4940944881889764,
+        "precision_undefined": false,
+        "recall": 0.47477931904161413,
+        "support": 3172
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        1448,
+        911,
+        96
+      ],
+      [
+        1162,
+        1506,
+        504
+      ],
+      [
+        253,
+        631,
+        989
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.589816700610998,
+        0.3710794297352342,
+        0.039103869653767824
+      ],
+      [
+        0.36633039092055486,
+        0.47477931904161413,
+        0.15889029003783103
+      ],
+      [
+        0.13507741591030434,
+        0.3368926855312333,
+        0.5280298985584624
+      ]
+    ],
+    "macro_f1": 0.5333853473051543
+  }
+}

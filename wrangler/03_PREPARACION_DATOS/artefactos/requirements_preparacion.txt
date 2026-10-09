@@ -1,9 +1,2 @@
-# Versiones verificadas en la ejecución de Fase 3; Python 3.10.6
-numpy==2.2.6
-pandas==2.3.3
-scikit-learn==1.7.2
-scipy==1.15.3
-ipykernel==7.3.0
-nbformat==5.11.1
-nbclient==0.11.0
-nbconvert==7.17.1
+# Python 3.10.6; mismas versiones que el entorno principal.
+-r ../../../requirements.txt

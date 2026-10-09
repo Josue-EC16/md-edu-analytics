@@ -1,0 +1,486 @@
+{
+  "artifacts": {
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/cierre.json": {
+      "bytes": 449,
+      "sha256": "9f8731b256052d6c07bd6d35004d28c3e2821eb173d5179fc35b46f39b3de344"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/comparacion.csv": {
+      "bytes": 7035,
+      "sha256": "1c3a81fcc9c27881c07cc8932bee7ad7ce192e9770a5b5f02fc91fcd6c4cd1d8"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/copia_limpia.json": {
+      "bytes": 4243,
+      "sha256": "dca1ff8c766ace654e399b41d1febf369d97a770fbf890dbf4a325a9091908ce"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/ejecucion_notebooks_carpetas.json": {
+      "bytes": 1649,
+      "sha256": "833c387027bb74f39e2fa5daf2cab89522253fcef2c7073be2d82b4eb041bb08"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/ejecucion_notebooks_raiz.json": {
+      "bytes": 1619,
+      "sha256": "cf6a12a7c92ff7b6d0a1866fd93913fcab1f73a7cc3fc4239ebdc0b6e0b2851c"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/final/ejecucion.json": {
+      "bytes": 151,
+      "sha256": "e6ef13ab2721cb70da94d56fed1a7975e425861823b292ca9f25d703be1e6f5e"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/final/pipeline_final.joblib": {
+      "bytes": 3228,
+      "sha256": "006b5a9e0b518633b8c227accb5d5c58d55c633001bc2ceb8092219680581d49"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/final/predicciones_prueba.csv": {
+      "bytes": 631886,
+      "sha256": "c17ac8cded38f2cdab3d1b308ae85c9e09363a860e8380b68f5546755623dc75"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/final/recibo.json": {
+      "bytes": 396,
+      "sha256": "ab2b44beb6f2cedb88203046eb43acbe41f897e04926112de68f579dc56e43af"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/final/resultado.json": {
+      "bytes": 2470,
+      "sha256": "3aaab80dda30e40b6296e9f22674a23fa7c36e508d0d10510adf12d4465d43cd"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/incidencias_implementacion.json": {
+      "bytes": 543,
+      "sha256": "6d7c8ee54a2edfa56239449ef036005a5b71878f5e11d77776dd685adb47abe8"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/inicio_prueba.json": {
+      "bytes": 244,
+      "sha256": "e996445ea4c31b14ac3fb72a3e40d313169e28bb2cc365f0629c69749ef51676"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/pliegues.csv": {
+      "bytes": 909308,
+      "sha256": "828e8dc686882e8d6e2c09ed1348aa78382c046fb0a578023ca6373392b77347"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/pliegues_sha256.json": {
+      "bytes": 83,
+      "sha256": "307f7c80e5325f28bc58a2beb4c175b905645f2440911e3ba837113750bc7d57"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/arbol_interpretacion.joblib": {
+      "bytes": 3645,
+      "sha256": "f101904f877028e3413d4e28434c40040be66121e23a2fc8536f4bf65afd851b"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/busqueda_cv.csv": {
+      "bytes": 9615,
+      "sha256": "4d8ce96a25bea6ca0f90e4f4ef385cae2f1c460aa7abfa243383ca75f01d8335"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/ejecucion.json": {
+      "bytes": 438,
+      "sha256": "b170991fcf7084c7d6c10bb08acfd298956d6a9906bee326465de8ce80a56ce2"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/importancia_impureza.csv": {
+      "bytes": 1444,
+      "sha256": "47f256b4967b3ab1cf2cbab887c5d4d4652fcd7280199832170d298745377165"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/importancia_permutacion.csv": {
+      "bytes": 1073,
+      "sha256": "4d6a8810ca0bd43ca2500c97042b374aae343595507bf46116c6bc5b634bb3ce"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/predicciones_validacion.csv": {
+      "bytes": 626797,
+      "sha256": "0316a113d9f32a33a914e926b03b8ab8364d7748ab92f6fb1de64aed3be64a13"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/recibo.json": {
+      "bytes": 786,
+      "sha256": "7dfbb6c35fea457aad732cc6be1321bb49e1f01437d53088642454dbaf83a173"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/reglas.txt": {
+      "bytes": 5022,
+      "sha256": "5ee29b6c64c8f9de4da66e481448f1eeab0f390dd93fa5dc697cab02423e3edd"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/arbol/resultado.json": {
+      "bytes": 5412,
+      "sha256": "c25c887ad3534550c3ba898f6ea0620fe02df48fbd3e4051007dd9716c193886"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/dummy/busqueda_cv.csv": {
+      "bytes": 470,
+      "sha256": "a7fcd886bdd3eb5d3fac70c1c147007453c5704a22a7f08bc773b7be6f39a714"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/dummy/ejecucion.json": {
+      "bytes": 426,
+      "sha256": "65a9663498b807d51168f2909ae3b1d8cf4dad62dadf3e2a4e389f576e2f9d03"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/dummy/predicciones_validacion.csv": {
+      "bytes": 234765,
+      "sha256": "224682bfcb5eaf5f5e3d830d1b3c8cdcc444eee02c3b61ebfe9785fe1b975bbf"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/dummy/recibo.json": {
+      "bytes": 394,
+      "sha256": "4329e01cdfdee9e4be21458fe8e8486093d3af24ceea6116bb9584f441baf107"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/dummy/resultado.json": {
+      "bytes": 3096,
+      "sha256": "c9164a8c678a2f7db46910739e6bd2e74fcf26b98a799cf904f29a16c8d72b66"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/logistica/busqueda_cv.csv": {
+      "bytes": 4860,
+      "sha256": "70f6ea43cc8c7c72e470ccf710168ad3e9a6fbe44b75fac1a228370b0aaff906"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/logistica/coeficientes.csv": {
+      "bytes": 5994,
+      "sha256": "f5ce64f7e7a0f4fe853a97b3981dee665a31e4d9e57138f258f67c893d78dc8a"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/logistica/ejecucion.json": {
+      "bytes": 436,
+      "sha256": "2adf4654ec9fafde25fcf765c10a9c19bccfc31549a61714c0c881f4dfb35d68"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/logistica/predicciones_validacion.csv": {
+      "bytes": 631994,
+      "sha256": "1aab1815612322894d3efac3c5245507e9e80b2076a2efce1702a4940ef459f5"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/logistica/recibo.json": {
+      "bytes": 486,
+      "sha256": "d7850af93f1ebee9ff17409d918c72c1be9ad8cfacd65dc95226e2e51ed61a4c"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/logistica/resultado.json": {
+      "bytes": 3773,
+      "sha256": "6f79101719d6f03650350a65fffdae459cfc6cfa04bd6c9deb7474037d290955"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/busqueda_cv.csv": {
+      "bytes": 7149,
+      "sha256": "8b91259dbc0f76d9d5a4c6afe2e28d676195b3f74647d3d728e88413ac215251"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/ejecucion.json": {
+      "bytes": 434,
+      "sha256": "9166728c545ea27497d0e3df777220b32caa0801cde1b4635368f84806f6933b"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/importancia_impureza.csv": {
+      "bytes": 1856,
+      "sha256": "54d6314db470de54b5c651c69373990b57082b1eddbaf2095e75ea014838228d"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/importancia_permutacion.csv": {
+      "bytes": 2553,
+      "sha256": "44f4894a339865328d7ca30a1cb12dbbd1379cb78d79dfe228c8cb9a6327273a"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/predicciones_validacion.csv": {
+      "bytes": 631276,
+      "sha256": "cdbac39315aefffae058d7c1045cc223438c61d822164cdaa0d8ca1333d61b60"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/recibo.json": {
+      "bytes": 597,
+      "sha256": "c18d67db3cd14b284ad9b32940188c3bc1d8e32419c59c572774083fba0415bf"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/principal/random_forest/resultado.json": {
+      "bytes": 3867,
+      "sha256": "9b48ec5a7af8695e2950d8ce49b3a1da561a56ca5d2708535989bd424de2805e"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/protocolo.json": {
+      "bytes": 12210,
+      "sha256": "bd38e7552d627286cae63e7ac35aa4deb1ce8b463cc9791ae63e97517a14dd61"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/tools/crear_notebooks_modelado.py": {
+      "bytes": 16697,
+      "sha256": "8095f32bde5e9c46bb0a5aaaf80bf3657126fd921d4d92a9b5f63228fa9efc9b"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/tools/ejecutar_modelado.py": {
+      "bytes": 2417,
+      "sha256": "15ffbb91a14dba3795bfb8040e8b67d2e8eaffe672709b2ca40641afc953044a"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/tools/verificar_modelado.py": {
+      "bytes": 776,
+      "sha256": "c7e182abb87a2bee937e01c78ef31bb8a679ff7055438e9cb6e9e895621df341"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/00_diseno_experimental_y_linea_base.ipynb": {
+      "bytes": 87341,
+      "sha256": "d6a8d998c4a969dc8270a9b075f334001c3145e57c5dffddc94b2bc75e35c279"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/01_regresion_logistica.ipynb": {
+      "bytes": 274224,
+      "sha256": "c878e36da8e973e903467472ce47733776c5cf52bf49200724285220a9a07d75"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/02_arbol_decision.ipynb": {
+      "bytes": 448838,
+      "sha256": "949e33b98158dc699195d46cea8c4311898806fa75a4722bc36465ae1e74616a"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/03_random_forest.ipynb": {
+      "bytes": 309199,
+      "sha256": "03e874ea5ba511901c6178dcefb2747b37b8bd618c697035bcdbf7978e509081"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/04_analisis_sensibilidad.ipynb": {
+      "bytes": 938655,
+      "sha256": "e5a2ab99091a7742837ce93f3e869944329b6677c5e2ae3e04294fe219c1390c"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/05_comparacion_y_seleccion.ipynb": {
+      "bytes": 256342,
+      "sha256": "fd610d667b627a34396669cb23d1999e18359183dd02eae6988503c6e5871eb1"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/06_modelo_final_y_prueba.ipynb": {
+      "bytes": 63150,
+      "sha256": "80e0d7ebbefa1637b153837e1e54f921733099da7793887126e73638e2065ed0"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/INFORME_FASE4_MODELADO.md": {
+      "bytes": 10472,
+      "sha256": "51789f6516adeb6182528a56722b7fa96d7da9fc068c9aab4f8f9a8b30f8f7e0"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/README_FASE4.md": {
+      "bytes": 8849,
+      "sha256": "c49dfb223da6a04d2c999f785caa104759be933fb58e94a77679029cc2dbe2e0"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/eduanalytics_modelado/__init__.py": {
+      "bytes": 245,
+      "sha256": "11bca9ba102344713b3382868041e8f26fda7a47199b2686bb7380319ed4d8ca"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/eduanalytics_modelado/academico.py": {
+      "bytes": 26349,
+      "sha256": "a424cae0ff979c9364d3410e32e1b89f21c9afe9ff4245fb9c5a6423e4967a71"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/eduanalytics_modelado/core.py": {
+      "bytes": 28822,
+      "sha256": "cf2e64edb4d45584fee64bf2fdd54bf8f7bee6575ec493d05ec23750b0de2b74"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/publicacion/wrangler/04_MODELADO/eduanalytics_modelado/verificacion.py": {
+      "bytes": 18673,
+      "sha256": "be6248a57b3954d4e75d0775843d7cab528b3629f827696a0169362c8f43ff61"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/arbol_interpretacion.joblib": {
+      "bytes": 3649,
+      "sha256": "ee1057a3b0ececa5a6a0a7538cab0d092abf193d580f1958c68939274cd88e86"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/busqueda_cv.csv": {
+      "bytes": 9623,
+      "sha256": "29f6e500b3e21a27ac7c5f55ef1ca68082f7e9b8c55e7288c912ff7fa6bd0257"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/ejecucion.json": {
+      "bytes": 438,
+      "sha256": "d8c47d1f61cc00ad8d929fad7d1d2a5e38e0c74453a74dd2a4d8aca38a38d168"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/importancia_impureza.csv": {
+      "bytes": 1358,
+      "sha256": "779f3d60790f6a158426ae27a0af76597f1fbc071145ed5c511ffe70650004f4"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/importancia_permutacion.csv": {
+      "bytes": 1005,
+      "sha256": "4ab6d201e6253193d22e159c743c151a657b688f78ffe8e05dfc38c2adba8e63"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/predicciones_validacion.csv": {
+      "bytes": 626531,
+      "sha256": "5d887892cd80370304a9f6c9b62122c702bc9e7df0512493b105c38c58631d7c"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/recibo.json": {
+      "bytes": 786,
+      "sha256": "82c01ed161a12888bf84f3904c81af38c16504219de309909d83af51074e819e"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/reglas.txt": {
+      "bytes": 5018,
+      "sha256": "0b086da4ae03955ba82039edfc0529c6715dad75bf10b15b30a6cb6e8a7cba43"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/arbol/resultado.json": {
+      "bytes": 5279,
+      "sha256": "414c54c5e5c7855fa9b4269d030afd52cdf252ee52b631b234ed7a45fbc370a7"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/logistica/busqueda_cv.csv": {
+      "bytes": 4881,
+      "sha256": "cf81cb07922b72ec4896284bbd2d0710d02a3278a34f6128ddca1da27109ac92"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/logistica/coeficientes.csv": {
+      "bytes": 5634,
+      "sha256": "31cf39e80470940f5c31b9cc049cc5ec97d38b18114591a5ef8a46dcb765e8e4"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/logistica/ejecucion.json": {
+      "bytes": 438,
+      "sha256": "083133b6bceb9da54a5dd9262d207b0cd1f22cbafb6f543eb26f09d7eebbbccc"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/logistica/predicciones_validacion.csv": {
+      "bytes": 632094,
+      "sha256": "8f03154c23a34164165c8df124d750b17c9d737b901aae0ed1498780adab8ec5"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/logistica/recibo.json": {
+      "bytes": 486,
+      "sha256": "4858c34788ac90024f7031bec9e734e44cd88e17e0ec40fa7f6503bf58b3ad71"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/logistica/resultado.json": {
+      "bytes": 3718,
+      "sha256": "7c97144a517299a6ac6c4ab22cb26194b5476fccbd56179aab30827b3941c454"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/busqueda_cv.csv": {
+      "bytes": 7165,
+      "sha256": "5da89d7a8c0e5ec066af5e75b17c52bdfbbacf9aa884758a12a0e0b5595940c3"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/ejecucion.json": {
+      "bytes": 433,
+      "sha256": "1be142a8532245157c4e89d924f173155282739238d7c4fa101eb48685083573"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/importancia_impureza.csv": {
+      "bytes": 1747,
+      "sha256": "a9a6514c774d69d562110d4b53e7527379af5dfaecd427ca8a706ea34980f463"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/importancia_permutacion.csv": {
+      "bytes": 2166,
+      "sha256": "d7c2377dc74e20c7fe0c0174153c78d19c7d3ad508bd8ca3b233d61b1a942758"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/predicciones_validacion.csv": {
+      "bytes": 631279,
+      "sha256": "8fdb43849145e9b6b9b779e714f105a0549313a521205ac71c317cd701d9ecfb"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/recibo.json": {
+      "bytes": 597,
+      "sha256": "c86dd0284a189c6c2829e03bb0cda0118ecb9cc2b3d3e509fabd488830fb5888"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reducido/random_forest/resultado.json": {
+      "bytes": 3816,
+      "sha256": "6f0616839615f986475571689d56dbda5e985e2b3c23551987731ca7c45d77aa"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/reproduccion_final.json": {
+      "bytes": 224,
+      "sha256": "63df1b20583b10d0ea732da8a3d0b33d77eaec6670cd9967120de8b3cb044dd0"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/revision_figuras.json": {
+      "bytes": 3275,
+      "sha256": "0669671bc6e8981c40712471bf8b0206e6e9856df6e7b966adc329e173fef131"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/seleccion_congelada.json": {
+      "bytes": 181,
+      "sha256": "81fd949a13d177e634077031e2d9ef73868d2457f974ea736321c6416240b84c"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/seleccion_modelo.json": {
+      "bytes": 5290,
+      "sha256": "1cbf4773cd350fe63d7e88a2864c49615364d962dcabf8a866f9bbf5a4f8be66"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/sensibilidad.csv": {
+      "bytes": 1331,
+      "sha256": "64c4a6b8edd7b151ef39d02f9d68c2265b2ed6106c6f0ff945c1f30decdb6246"
+    },
+    "wrangler/04_MODELADO/artefactos/3db94eb69df3c875/verificacion.json": {
+      "bytes": 1508,
+      "sha256": "eecfab8e3f9684c67cff2576321c318e7f92679b2531ce074c7696f0452e3de4"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/comparacion_arbol_confusion.png": {
+      "bytes": 53981,
+      "sha256": "5fafeff9ee29e38dcbfbe97bcab86173b62a29d004c75a5c99f6baf7fc55cd22"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/comparacion_dummy_confusion.png": {
+      "bytes": 43928,
+      "sha256": "747974e4e4e100b38cced567fd3f285cb2208f8e971d0f9e21fdff819854f64e"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/comparacion_logistica_confusion.png": {
+      "bytes": 53016,
+      "sha256": "5d226e8fb4b78ba90dd9317fa7bbd9e8ca457b8ec42e5659ae4846ddad109f9c"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/comparacion_modelos.png": {
+      "bytes": 44305,
+      "sha256": "b2ae81be215073bdf51422f33a8117c5a62225bb63ef55c878b75e620fafeb5a"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/comparacion_random_forest_confusion.png": {
+      "bytes": 52771,
+      "sha256": "d7816585cf5940c45e1a2660de9a76446748a4f1f2c80d165d3eea0f3f122584"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/comparacion_sensibilidad.png": {
+      "bytes": 44305,
+      "sha256": "b2ae81be215073bdf51422f33a8117c5a62225bb63ef55c878b75e620fafeb5a"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/final_prueba_confusion.png": {
+      "bytes": 51927,
+      "sha256": "09b455ad1ab5a4cb6a32079b212add6ca097a05fdce59feea0908664e93a957a"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_arbol_confusion.png": {
+      "bytes": 53597,
+      "sha256": "063b2fcf6ca04fbaf48371c78c069ca070021de83b02d02679e0b8514d2c6dc7"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_arbol_cv.png": {
+      "bytes": 48790,
+      "sha256": "09dc0908436058c1690b14d24359c7301ff2db9061df9e2a4edab6a7f63e5d41"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_arbol_estructura.png": {
+      "bytes": 174330,
+      "sha256": "86193b6bb1ef9317101a4010d0585da007599575852bc803e0d9a605c921dd49"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_arbol_importancias.png": {
+      "bytes": 106544,
+      "sha256": "77f0c6db2cc91dd5ce08811d58484edfec8b98fd9348e5a15e07311e78ae6c18"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_dummy_confusion.png": {
+      "bytes": 44234,
+      "sha256": "0fa9b2640da678669b1e13a4bee5e52b3c5bd9aef2780ffb834d3e051cae2d2a"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_logistica_coeficientes.png": {
+      "bytes": 90617,
+      "sha256": "992024b8876c8c37bdae197d3345badc08a0bad388e8eb25d79786bd68a74fd5"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_logistica_confusion.png": {
+      "bytes": 53386,
+      "sha256": "5eb42cfa656244bc9fe645a1833e27f2f05892ff9560688e5a3a7fc00ac3a5dc"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_logistica_cv.png": {
+      "bytes": 46878,
+      "sha256": "969959dbfa11b3ccb2f4d97f5392d2d561a7efbfe6acb5e9c8f53da3b72e65cd"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_random_forest_confusion.png": {
+      "bytes": 52635,
+      "sha256": "8fc0b27b565d51abd25435a7de031966dcf14d44f7aeeec951c24d61835ae777"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_random_forest_cv.png": {
+      "bytes": 56197,
+      "sha256": "ac5f24f5f5dba3b087db171e1d1e26757e8c1ff786a709c7c56e112773b24e69"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/principal_random_forest_importancias.png": {
+      "bytes": 106510,
+      "sha256": "defb025216e259af1b30efe212b708451c5825983fe626e947eaffdcf53aceca"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_arbol_confusion.png": {
+      "bytes": 53566,
+      "sha256": "35c3fbe7f8a1d3e188df91ad37687cf63cce53fd78c1b38d1bc42617930a9b97"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_arbol_cv.png": {
+      "bytes": 49446,
+      "sha256": "7c62e2b7cf49534d8f66303630277c1118957bb73189c5c53dd3142c027235be"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_arbol_estructura.png": {
+      "bytes": 174980,
+      "sha256": "27105a9faad101e7a120cfd61efb5472f9078488b56328109731039861ec4c63"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_arbol_importancias.png": {
+      "bytes": 102602,
+      "sha256": "1bbbda02652d080d913f7ef06fc90ed8b1120daa304dc99399675c6f34afa832"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_logistica_coeficientes.png": {
+      "bytes": 91002,
+      "sha256": "304180f05cf4156c00a887986811656674fdab50367011538799cb8078ff4c36"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_logistica_confusion.png": {
+      "bytes": 53974,
+      "sha256": "0af7780bf986ab86f7e976ad72b2adaebe311772cc00b29f12a960d1b6ab029c"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_logistica_cv.png": {
+      "bytes": 46954,
+      "sha256": "2c9ca9eb2973b9bc54eeb68589928040f4707541a63ea7ee1699f4fc4a946038"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_random_forest_confusion.png": {
+      "bytes": 51307,
+      "sha256": "0e7bb91a3da68e289f1eb98d8037107ad2e2c71e23f5cba500669b41995bfc49"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_random_forest_cv.png": {
+      "bytes": 56063,
+      "sha256": "117f9cc3c905c34480a5be6d6ee98018d206b6efebbf912c42243c3fa427bdb1"
+    },
+    "wrangler/04_MODELADO/figuras/3db94eb69df3c875/reducido_random_forest_importancias.png": {
+      "bytes": 102080,
+      "sha256": "49e45231f924ed7019d9637432d72040b40870a248f5329371542085de1fd4f7"
+    }
+  },
+  "current_published_files": {
+    "tools/crear_notebooks_modelado.py": "8095f32bde5e9c46bb0a5aaaf80bf3657126fd921d4d92a9b5f63228fa9efc9b",
+    "tools/ejecutar_modelado.py": "15ffbb91a14dba3795bfb8040e8b67d2e8eaffe672709b2ca40641afc953044a",
+    "tools/verificar_modelado.py": "c7e182abb87a2bee937e01c78ef31bb8a679ff7055438e9cb6e9e895621df341",
+    "wrangler/04_MODELADO/00_diseno_experimental_y_linea_base.ipynb": "d6a8d998c4a969dc8270a9b075f334001c3145e57c5dffddc94b2bc75e35c279",
+    "wrangler/04_MODELADO/01_regresion_logistica.ipynb": "c878e36da8e973e903467472ce47733776c5cf52bf49200724285220a9a07d75",
+    "wrangler/04_MODELADO/02_arbol_decision.ipynb": "949e33b98158dc699195d46cea8c4311898806fa75a4722bc36465ae1e74616a",
+    "wrangler/04_MODELADO/03_random_forest.ipynb": "03e874ea5ba511901c6178dcefb2747b37b8bd618c697035bcdbf7978e509081",
+    "wrangler/04_MODELADO/04_analisis_sensibilidad.ipynb": "e5a2ab99091a7742837ce93f3e869944329b6677c5e2ae3e04294fe219c1390c",
+    "wrangler/04_MODELADO/05_comparacion_y_seleccion.ipynb": "fd610d667b627a34396669cb23d1999e18359183dd02eae6988503c6e5871eb1",
+    "wrangler/04_MODELADO/06_modelo_final_y_prueba.ipynb": "80e0d7ebbefa1637b153837e1e54f921733099da7793887126e73638e2065ed0",
+    "wrangler/04_MODELADO/INFORME_FASE4_MODELADO.md": "51789f6516adeb6182528a56722b7fa96d7da9fc068c9aab4f8f9a8b30f8f7e0",
+    "wrangler/04_MODELADO/README_FASE4.md": "c49dfb223da6a04d2c999f785caa104759be933fb58e94a77679029cc2dbe2e0",
+    "wrangler/04_MODELADO/eduanalytics_modelado/__init__.py": "11bca9ba102344713b3382868041e8f26fda7a47199b2686bb7380319ed4d8ca",
+    "wrangler/04_MODELADO/eduanalytics_modelado/academico.py": "a424cae0ff979c9364d3410e32e1b89f21c9afe9ff4245fb9c5a6423e4967a71",
+    "wrangler/04_MODELADO/eduanalytics_modelado/core.py": "cf2e64edb4d45584fee64bf2fdd54bf8f7bee6575ec493d05ec23750b0de2b74",
+    "wrangler/04_MODELADO/eduanalytics_modelado/verificacion.py": "be6248a57b3954d4e75d0775843d7cab528b3629f827696a0169362c8f43ff61"
+  },
+  "excluded": "manifest itself, candidate caches, environments, private local files",
+  "experiment_id": "3db94eb69df3c875",
+  "phase3_manifest_sha256": "50cd682633fde10258bbb8312d2f88f084077f6f537c17e47b2fe009fd2d3981",
+  "protocol_sha256": "bd38e7552d627286cae63e7ac35aa4deb1ce8b463cc9791ae63e97517a14dd61",
+  "publication_snapshot": "publicacion/ preserves code, notebooks and report for this experiment identity",
+  "results_reproducible": "scores, folds, predictions; timings/dates are execution metadata",
+  "schema_version": 1,
+  "stage": "Fase 4 complete; Fase 5 business evaluation pending"
+}

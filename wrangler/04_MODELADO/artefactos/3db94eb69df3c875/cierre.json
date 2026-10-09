@@ -1,0 +1,14 @@
+{
+  "additional_frozen_reproduction_fits": 1,
+  "baseline": 1,
+  "clean_copy": "PASS",
+  "complete_search_experiments": 6,
+  "figures_reviewed": 28,
+  "final_model": "logistica",
+  "notebook_bytes_identical_between_working_directories": true,
+  "pending_phase": "5 business evaluation",
+  "preserved_previous_phases": "PASS",
+  "protocol_fits": 393,
+  "seven_notebooks_root_and_phase_folder": "PASS",
+  "uncommitted_previous_work_preserved": true
+}

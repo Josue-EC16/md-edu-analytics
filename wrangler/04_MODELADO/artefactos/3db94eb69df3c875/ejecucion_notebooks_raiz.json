@@ -1,0 +1,58 @@
+[
+  {
+    "code_cells": 5,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "00_diseno_experimental_y_linea_base.ipynb",
+    "seconds": 7.128597500035539,
+    "sha256": "d6a8d998c4a969dc8270a9b075f334001c3145e57c5dffddc94b2bc75e35c279"
+  },
+  {
+    "code_cells": 3,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "01_regresion_logistica.ipynb",
+    "seconds": 5.583674099994823,
+    "sha256": "c878e36da8e973e903467472ce47733776c5cf52bf49200724285220a9a07d75"
+  },
+  {
+    "code_cells": 3,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "02_arbol_decision.ipynb",
+    "seconds": 6.132769100135192,
+    "sha256": "949e33b98158dc699195d46cea8c4311898806fa75a4722bc36465ae1e74616a"
+  },
+  {
+    "code_cells": 3,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "03_random_forest.ipynb",
+    "seconds": 5.424704599892721,
+    "sha256": "03e874ea5ba511901c6178dcefb2747b37b8bd618c697035bcdbf7978e509081"
+  },
+  {
+    "code_cells": 3,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "04_analisis_sensibilidad.ipynb",
+    "seconds": 11.342236099997535,
+    "sha256": "e5a2ab99091a7742837ce93f3e869944329b6677c5e2ae3e04294fe219c1390c"
+  },
+  {
+    "code_cells": 2,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "05_comparacion_y_seleccion.ipynb",
+    "seconds": 13.171301600057632,
+    "sha256": "fd610d667b627a34396669cb23d1999e18359183dd02eae6988503c6e5871eb1"
+  },
+  {
+    "code_cells": 3,
+    "cwd": "raiz",
+    "errors": 0,
+    "notebook": "06_modelo_final_y_prueba.ipynb",
+    "seconds": 11.553114400012419,
+    "sha256": "80e0d7ebbefa1637b153837e1e54f921733099da7793887126e73638e2065ed0"
+  }
+]

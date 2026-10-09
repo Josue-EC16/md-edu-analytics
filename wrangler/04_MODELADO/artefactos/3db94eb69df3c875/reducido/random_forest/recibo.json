@@ -1,0 +1,10 @@
+{
+  "files": {
+    "busqueda_cv.csv": "5da89d7a8c0e5ec066af5e75b17c52bdfbbacf9aa884758a12a0e0b5595940c3",
+    "ejecucion.json": "1be142a8532245157c4e89d924f173155282739238d7c4fa101eb48685083573",
+    "importancia_impureza.csv": "a9a6514c774d69d562110d4b53e7527379af5dfaecd427ca8a706ea34980f463",
+    "importancia_permutacion.csv": "d7c2377dc74e20c7fe0c0174153c78d19c7d3ad508bd8ca3b233d61b1a942758",
+    "predicciones_validacion.csv": "8fdb43849145e9b6b9b779e714f105a0549313a521205ac71c317cd701d9ecfb",
+    "resultado.json": "6f0616839615f986475571689d56dbda5e985e2b3c23551987731ca7c45d77aa"
+  }
+}

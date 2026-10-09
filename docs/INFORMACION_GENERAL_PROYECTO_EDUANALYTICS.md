@@ -2,6 +2,8 @@
 
 ## 1. Descripción general
 
+**Acuerdo de alcance:** clasificación multiclase retrospectiva de registros completos de los estudiantes universitarios representados en el CSV. UNIFRANZ es la universidad del equipo, no una procedencia acreditada de los datos. `wrangler` es el flujo principal de las Fases 1–3; el notebook de la raíz es complementario. No se ha demostrado detección anticipada. El KPI es numérico descriptivo; `Burnout_Risk_Level` es categórica.
+
 **EduAnalytics** es un proyecto de minería de datos orientado al análisis de patrones de uso de inteligencia artificial generativa en estudiantes y su relación con variables académicas y de bienestar.
 
 El propósito principal del proyecto es identificar qué características y hábitos diferencian a los estudiantes clasificados con distintos niveles de riesgo de burnout, prestando especial atención a variables como:
@@ -82,7 +84,7 @@ El proyecto busca generar evidencia analítica que permita:
 
 **Kaggle**
 
-El dataset fue descargado desde la plataforma Kaggle y constituye la fuente principal de datos utilizada en el proyecto.
+La publicación original y su versión 1 se verificaron el 9 de octubre de 2026. Publicador: `ranaghulamnabi` (Coding expert G.N), licencia declarada CC0: Public Domain. El archivo local es semánticamente equivalente al original. La fecha original de descarga del equipo sigue pendiente. Véase [procedencia y evidencia de equivalencia](PROCEDENCIA_DATASET.md).
 
 
 ### Tamaño del dataset
@@ -107,7 +109,7 @@ Cada fila representa un estudiante y contiene información relacionada con:
 
 ### Consideración importante sobre el origen de los datos
 
-El conjunto de datos presenta características de un dataset sintético o simulado. Por esta razón, los resultados deben interpretarse dentro del contexto del propio dataset y no generalizarse automáticamente a toda la población estudiantil.
+El origen sintético o simulado es una posibilidad no confirmada por la publicación consultada. No se acredita un muestreo de estudiantes reales ni una procedencia institucional. Los resultados describen este dataset y no se generalizan automáticamente a toda la población estudiantil.
 
 ---
 
@@ -195,7 +197,7 @@ La meta general se plantea como:
 
 > **Reducir la proporción de estudiantes clasificados con riesgo alto respecto de la línea base del 24,97 %.**
 
-Esta reducción debe entenderse como una meta futura de gestión o intervención institucional, no como un resultado actualmente demostrado por el proyecto.
+Esta reducción es una meta futura de intervención institucional, no un resultado demostrado. Reducir las predicciones `High` de un clasificador no demuestra reducir el riesgo real ni modifica la línea base de etiquetas del CSV.
 
 El proyecto de minería de datos puede contribuir mediante:
 
@@ -316,8 +318,8 @@ Categorías encontradas:
 - `Debugging/Troubleshooting` → Depuración y resolución de problemas
 - `Copywriting/Drafting` → Redacción y elaboración de borradores
 - `Ideation` → Generación de ideas
-- `Summarizing/Reading` → Resumen y apoyo a la lectura
-- `Direct Answer Generation` → Generación directa de respuestas
+- `Summarizing_Reading` → Resumen y apoyo a la lectura
+- `Direct_Answer_Generation` → Generación directa de respuestas
 
 ### `Perceived_AI_Dependency`
 
@@ -345,7 +347,7 @@ Promedio aproximado: **4,27**.
 
 **Traducción:** Puntuación de retención de habilidades.
 
-Promedio aproximado: **75,80 / 100**.
+Promedio aproximado: **75,80** (máximo observado: 100; instrumento y escala oficial no documentados).
 
 ### `Pre_Semester_GPA`
 
@@ -459,6 +461,16 @@ La categoría de mayor interés para el KPI es **High**.
 
 ## 17. Principales relaciones encontradas
 
+Las cifras siguientes son **Pearson**, recalculadas sobre el CSV completo. Para dependencia y ansiedad, escalas ordenadas cuyo instrumento no está acreditado, la interpretación principal usa **Spearman**; Pearson se conserva como contraste descriptivo histórico.
+
+| Relación | Pearson | Spearman |
+|---|---:|---:|
+| `Pre_Semester_GPA` / `Post_Semester_GPA` | 0,927 | 0,917 |
+| `Weekly_GenAI_Hours` / `Perceived_AI_Dependency` | 0,665 | 0,555 |
+| `Perceived_AI_Dependency` / `Anxiety_Level_During_Exams` | 0,308 | 0,280 |
+| `Weekly_GenAI_Hours` / `Anxiety_Level_During_Exams` | 0,269 | 0,221 |
+| `Weekly_GenAI_Hours` / `Skill_Retention_Score` | -0,118 | -0,039 |
+
 ### GPA inicial y GPA final
 
 Correlación aproximada: **0,927**.
@@ -497,11 +509,11 @@ Al comparar los estudiantes según el nivel de riesgo de burnout se observan dif
 
 | Variable | Low | Medium | High |
 |---|---:|---:|---:|
-| Horas de IA por semana | 4,64 | 7,35 | 15,22 |
-| Dependencia percibida de IA | 2,82 | 3,37 | 4,64 |
+| Horas de IA por semana | 4,64 | 7,35 | 15,21 |
+| Dependencia percibida de IA | 2,82 | 3,36 | 4,64 |
 | Ansiedad durante exámenes | 3,93 | 4,17 | 4,89 |
 | Horas de estudio tradicional | 11,97 | 11,29 | 10,08 |
-| GPA final | 3,41 | 3,35 | 3,28 |
+| GPA final | 3,40 | 3,35 | 3,28 |
 | Retención de habilidades | 76,40 | 76,24 | 74,25 |
 
 El grupo `High` presenta, en promedio:
@@ -536,6 +548,8 @@ Puede ser útil para modelos de regresión y para analizar la evolución académ
 ---
 
 ## 20. Líneas de modelado propuestas
+
+La Fase 4 abordará clasificación con regresión logística y árbol de decisión. Regresión, clustering y `GPA_Change` son propuestas secundarias, fuera del conjunto principal de 14 predictores preparado en Fase 3.
 
 ### Clasificación
 
@@ -614,7 +628,7 @@ Las relaciones encontradas son asociaciones estadísticas. No puede afirmarse qu
 
 No debe utilizarse como diagnóstico médico o psicológico.
 
-### El dataset parece ser sintético o simulado
+### Origen sintético o simulado no confirmado
 
 Los resultados describen principalmente el comportamiento interno del conjunto de datos y no deben generalizarse automáticamente a estudiantes reales de una universidad o país determinado.
 
@@ -640,7 +654,11 @@ La línea base de 24,97 % describe el dataset. La meta de reducir ese porcentaje
 
 Una correlación alta o moderada indica asociación estadística, pero no demuestra que una variable produzca cambios en otra.
 
-### Posible riesgo de fuga de información
+### Disponibilidad temporal y fuga de información
+
+En el alcance retrospectivo, GPA final y retención se incluyen como predictores de registros completos. Esto no acredita su disponibilidad anticipada. La fuga directa consiste en incluir la etiqueta o sus transformaciones; es distinta de la limitación temporal y de una posible circularidad por generación de la etiqueta. La fórmula original sigue desconocida.
+
+La Fase 2 exploró el CSV completo. Prueba es una partición interna reservada, no una cohorte externa nunca inspeccionada; debe mantenerse fuera de futuras decisiones de selección.
 
 Cuando se desarrollen modelos predictivos será necesario definir qué variables estarían disponibles realmente en el momento de realizar una predicción.
 
@@ -696,3 +714,12 @@ El proyecto busca utilizar estos patrones para desarrollar modelos de clasificac
 ## 28. Idea central del proyecto
 
 > **Utilizar minería de datos para identificar patrones de uso de IA generativa y hábitos académicos asociados con diferentes niveles de riesgo de burnout estudiantil, tomando como línea base que el 24,97 % de los estudiantes del dataset se encuentra clasificado en nivel de riesgo alto.**
+
+
+## 29. Correcciones verificadas y preparación
+
+Las tres diferencias de la sección 18 eran de publicación: High/horas IA 15,22 → 15,21; Medium/dependencia 3,37 → 3,36; Low/GPA final 3,41 → 3,40. El CSV no cambió de valores. Se desconoce si el origen fue transcripción o redondeo intermedio. Las Fases 2 y 3 contrastan la documentación corregida con el CSV.
+
+El dataset tiene cero nulos, duplicados completos y duplicados de identificador. Los extremos IQR se conservan; un valor señalado no es automáticamente un error. Los criterios de plausibilidad son provisionales, no instrumentos acreditados.
+
+Particiones congeladas: 35.000 / 7.500 / 7.500, semilla 42, estratificación por objetivo, sin cruces por estudiante. Las etiquetas siguen siendo texto. No se exportan transformaciones aprendidas ni modelos. El ajuste de categorías y escalado corresponde exclusivamente al entrenamiento o al pliegue correspondiente de Fase 4.

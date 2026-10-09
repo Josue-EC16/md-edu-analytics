@@ -1,0 +1,8 @@
+{
+  "additional_verification_fits": 1,
+  "metrics": "EXACT",
+  "original_evidence_preserved": true,
+  "predictions": "EXACT",
+  "probabilities_max_abs_difference": 0.0,
+  "reproduced_frozen_experiment": "3db94eb69df3c875"
+}

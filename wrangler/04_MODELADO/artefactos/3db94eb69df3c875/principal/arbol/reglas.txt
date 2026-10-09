@@ -1,0 +1,94 @@
+|--- numericas__Weekly_GenAI_Hours <= 11.1550
+|   |--- numericas__Weekly_GenAI_Hours <= 5.1350
+|   |   |--- categoricas__Year_of_Study_Graduate <= 0.5000
+|   |   |   |--- categoricas__Year_of_Study_Freshman <= 0.5000
+|   |   |   |   |--- numericas__Pre_Semester_GPA <= 2.5925
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- numericas__Pre_Semester_GPA >  2.5925
+|   |   |   |   |   |--- class: Low
+|   |   |   |--- categoricas__Year_of_Study_Freshman >  0.5000
+|   |   |   |   |--- numericas__Post_Semester_GPA <= 3.2865
+|   |   |   |   |   |--- class: Low
+|   |   |   |   |--- numericas__Post_Semester_GPA >  3.2865
+|   |   |   |   |   |--- class: Low
+|   |   |--- categoricas__Year_of_Study_Graduate >  0.5000
+|   |   |   |--- numericas__Weekly_GenAI_Hours <= 3.0750
+|   |   |   |   |--- numericas__Pre_Semester_GPA <= 2.5460
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- numericas__Pre_Semester_GPA >  2.5460
+|   |   |   |   |   |--- class: Medium
+|   |   |   |--- numericas__Weekly_GenAI_Hours >  3.0750
+|   |   |   |   |--- numericas__Pre_Semester_GPA <= 2.9540
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- numericas__Pre_Semester_GPA >  2.9540
+|   |   |   |   |   |--- class: Medium
+|   |--- numericas__Weekly_GenAI_Hours >  5.1350
+|   |   |--- categoricas__Year_of_Study_Graduate <= 0.5000
+|   |   |   |--- categoricas__Year_of_Study_Freshman <= 0.5000
+|   |   |   |   |--- numericas__Perceived_AI_Dependency <= 2.5000
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- numericas__Perceived_AI_Dependency >  2.5000
+|   |   |   |   |   |--- class: Medium
+|   |   |   |--- categoricas__Year_of_Study_Freshman >  0.5000
+|   |   |   |   |--- numericas__Weekly_GenAI_Hours <= 7.7350
+|   |   |   |   |   |--- class: Low
+|   |   |   |   |--- numericas__Weekly_GenAI_Hours >  7.7350
+|   |   |   |   |   |--- class: Medium
+|   |   |--- categoricas__Year_of_Study_Graduate >  0.5000
+|   |   |   |--- numericas__Weekly_GenAI_Hours <= 6.9150
+|   |   |   |   |--- categoricas__Prompt_Engineering_Skill_Beginner <= 0.5000
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- categoricas__Prompt_Engineering_Skill_Beginner >  0.5000
+|   |   |   |   |   |--- class: Medium
+|   |   |   |--- numericas__Weekly_GenAI_Hours >  6.9150
+|   |   |   |   |--- categoricas__Institutional_Policy_Strict_Ban <= 0.5000
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- categoricas__Institutional_Policy_Strict_Ban >  0.5000
+|   |   |   |   |   |--- class: High
+|--- numericas__Weekly_GenAI_Hours >  11.1550
+|   |--- numericas__Weekly_GenAI_Hours <= 22.5050
+|   |   |--- categoricas__Institutional_Policy_Strict_Ban <= 0.5000
+|   |   |   |--- numericas__Weekly_GenAI_Hours <= 14.9850
+|   |   |   |   |--- categoricas__Year_of_Study_Graduate <= 0.5000
+|   |   |   |   |   |--- class: Medium
+|   |   |   |   |--- categoricas__Year_of_Study_Graduate >  0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |--- numericas__Weekly_GenAI_Hours >  14.9850
+|   |   |   |   |--- categoricas__Year_of_Study_Graduate <= 0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- categoricas__Year_of_Study_Graduate >  0.5000
+|   |   |   |   |   |--- class: High
+|   |   |--- categoricas__Institutional_Policy_Strict_Ban >  0.5000
+|   |   |   |--- numericas__Weekly_GenAI_Hours <= 15.5450
+|   |   |   |   |--- categoricas__Year_of_Study_Freshman <= 0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- categoricas__Year_of_Study_Freshman >  0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |--- numericas__Weekly_GenAI_Hours >  15.5450
+|   |   |   |   |--- numericas__Post_Semester_GPA <= 3.0375
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- numericas__Post_Semester_GPA >  3.0375
+|   |   |   |   |   |--- class: High
+|   |--- numericas__Weekly_GenAI_Hours >  22.5050
+|   |   |--- numericas__Weekly_GenAI_Hours <= 28.9000
+|   |   |   |--- categoricas__Year_of_Study_Freshman <= 0.5000
+|   |   |   |   |--- categoricas__Institutional_Policy_Strict_Ban <= 0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- categoricas__Institutional_Policy_Strict_Ban >  0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |--- categoricas__Year_of_Study_Freshman >  0.5000
+|   |   |   |   |--- numericas__Pre_Semester_GPA <= 2.5110
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- numericas__Pre_Semester_GPA >  2.5110
+|   |   |   |   |   |--- class: High
+|   |   |--- numericas__Weekly_GenAI_Hours >  28.9000
+|   |   |   |--- numericas__Weekly_GenAI_Hours <= 39.9400
+|   |   |   |   |--- categoricas__Year_of_Study_Freshman <= 0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- categoricas__Year_of_Study_Freshman >  0.5000
+|   |   |   |   |   |--- class: High
+|   |   |   |--- numericas__Weekly_GenAI_Hours >  39.9400
+|   |   |   |   |--- numericas__Traditional_Study_Hours <= 9.8800
+|   |   |   |   |   |--- class: High
+|   |   |   |   |--- numericas__Traditional_Study_Hours >  9.8800
+|   |   |   |   |   |--- class: High

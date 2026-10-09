@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard: Impacto de la IA en Estudiantes</title>
+    <title>EduAnalytics: asociaciones descriptivas del CSV</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -22,8 +22,8 @@
 
     <header class="bg-indigo-600 text-white shadow-lg py-6 px-8 flex flex-col md:flex-row justify-between items-center">
         <div>
-            <h1 class="text-2xl font-bold">Reporte de Impacto de IA</h1>
-            <p class="text-indigo-200 text-sm mt-1">Análisis de uso y rendimiento estudiantil</p>
+            <h1 class="text-2xl font-bold">EduAnalytics: reporte descriptivo</h1>
+            <p class="text-indigo-200 text-sm mt-1">Registros universitarios completos · análisis retrospectivo, no causal ni clínico</p>
         </div>
         <div class="mt-4 md:mt-0 flex items-center bg-indigo-700 p-2 rounded-lg shadow-inner">
             <label for="csvFileInput" class="cursor-pointer bg-white text-indigo-600 font-semibold py-2 px-4 rounded shadow hover:bg-indigo-50 transition-colors">
@@ -34,10 +34,16 @@
         </div>
     </header>
 
+    <aside style="padding:12px 32px;background:#eef2ff;font-size:14px">
+        KPI: porcentaje de etiquetas High; no evalúa predicciones ni representa prevalencia clínica.
+        GPA final y retención se observan retrospectivamente. Fórmula de etiqueta y origen sintético pendientes.
+        UNIFRANZ es la institución del equipo; los resultados describen este CSV.
+        <a href="docs/PROCEDENCIA_DATASET.md">Procedencia: Kaggle, versión 1, CC0</a>.
+    </aside>
     <main class="flex-grow p-8 max-w-7xl mx-auto w-full hidden" id="dashboardContent">
         
         <!-- Tarjetas de Resumen Numérico -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
             <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-6 flex flex-col fade-in" style="animation-delay: 0.1s;">
                 <span class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Total Estudiantes</span>
                 <span class="text-3xl font-bold text-indigo-600 mt-2" id="totalStudents">0</span>
@@ -54,7 +60,12 @@
                 <span class="text-slate-500 text-sm font-semibold uppercase tracking-wider">Nivel de Ansiedad (Prom)</span>
                 <span class="text-3xl font-bold text-rose-500 mt-2" id="avgAnxiety">0.0</span>
             </div>
-        </div>
+        <div class="bg-white rounded-lg shadow p-5">
+                <h3 class="text-slate-500 text-sm font-semibold">Registros High / total</h3>
+                <p class="text-3xl font-bold text-red-700 mt-2" id="kpiHigh">—</p>
+                <p class="text-sm text-slate-500" id="classCounts">Low / Medium / High</p>
+            </div>
+            </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <!-- Gráfico 1: Horas IA vs Tradicional -->
@@ -125,51 +136,65 @@
         let charts = {};
 
         // Función para parsear CSV nativamente (Vanilla JS)
+        const EXPECTED_HEADERS = ["Student_ID", "Major_Category", "Year_of_Study", "Pre_Semester_GPA", "Weekly_GenAI_Hours", "Primary_Use_Case", "Prompt_Engineering_Skill", "Tool_Diversity", "Paid_Subscription", "Traditional_Study_Hours", "Perceived_AI_Dependency", "Institutional_Policy", "Anxiety_Level_During_Exams", "Post_Semester_GPA", "Skill_Retention_Score", "Burnout_Risk_Level"];
+        const LOCAL_SHA256 = '585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5';
+        const NUMERIC_HEADERS = new Set(['Student_ID','Pre_Semester_GPA','Weekly_GenAI_Hours','Tool_Diversity','Traditional_Study_Hours','Perceived_AI_Dependency','Anxiety_Level_During_Exams','Post_Semester_GPA','Skill_Retention_Score']);
         function parseCSV(csvText) {
-            const lines = csvText.split(/\r?\n/).filter(line => line.trim() !== '');
-            if (lines.length === 0) return [];
-
+            const lines = csvText.replace(/^\uFEFF/, '').split(/\r?\n/);
+            if (lines[lines.length - 1] === '') lines.pop();
+            if (lines.length < 2) throw new Error('El CSV está vacío.');
             const separator = lines[0].includes(';') ? ';' : ',';
-            const headers = lines[0].split(separator).map(h => h.trim().replace(/^["']|["']$/g, ''));
-            const data = [];
-
-            for (let i = 1; i < lines.length; i++) {
-                // Manejo básico de comas (ignoramos comas dentro de comillas simples para este scope nativo rápido)
-                const currentLine = lines[i].split(separator);
-                if (currentLine.length === headers.length) {
-                    const rowObj = {};
-                    for (let j = 0; j < headers.length; j++) {
-                        let val = currentLine[j].trim().replace(/^["']|["']$/g, '');
-                        // Intentar convertir a número si es posible
-                        rowObj[headers[j]] = isNaN(Number(val)) || val === '' ? val : Number(val);
-                    }
-                    data.push(rowObj);
-                }
+            const headers = lines[0].split(separator);
+            if (JSON.stringify(headers) !== JSON.stringify(EXPECTED_HEADERS)) {
+                throw new Error('Las 16 columnas y su orden deben corresponder al CSV de EduAnalytics.');
             }
+            const ids = new Set();
+            const data = lines.slice(1).map((line, i) => {
+                const fields = line.split(separator);
+                if (fields.length !== headers.length) throw new Error(`Fila ${i + 2}: cantidad de campos incorrecta.`);
+                const row = {};
+                headers.forEach((h, j) => {
+                    const value = fields[j];
+                    if (value === '' || value.trim() !== value) throw new Error(`Fila ${i + 2}: campo vacío o espacios inesperados.`);
+                    if (NUMERIC_HEADERS.has(h)) {
+                        if (!Number.isFinite(Number(value))) throw new Error(`Fila ${i + 2}: valor numérico inválido.`);
+                        row[h] = Number(value);
+                    } else if (h === 'Paid_Subscription') {
+                        if (!['True','False'].includes(value)) throw new Error('Suscripción debe ser True o False.');
+                        row[h] = value === 'True';
+                    } else row[h] = value;
+                });
+                if (!['Low','Medium','High'].includes(row.Burnout_Risk_Level)) throw new Error('Clase inesperada.');
+                if (!Number.isSafeInteger(row.Student_ID) || ids.has(row.Student_ID)) throw new Error('Identificador inválido o repetido.');
+                ids.add(row.Student_ID);
+                return row;
+            });
+            if (data.length !== 50000) throw new Error('El CSV de este proyecto contiene 50.000 registros.');
             return { headers, data };
         }
 
-        document.getElementById('csvFileInput').addEventListener('change', function(e) {
+        document.getElementById('csvFileInput').addEventListener('change', async function(e) {
             const file = e.target.files[0];
             if (!file) return;
-
-            document.getElementById('fileNameDisplay').textContent = file.name;
-            document.getElementById('fileNameDisplay').title = file.name;
-
-            const reader = new FileReader();
-            reader.onload = function(event) {
-                const csvData = event.target.result;
-                const parsedData = parseCSV(csvData);
-                
-                if (parsedData.data.length > 0) {
-                    document.getElementById('emptyState').classList.add('hidden');
-                    document.getElementById('dashboardContent').classList.remove('hidden');
-                    generateReports(parsedData.headers, parsedData.data);
-                } else {
-                    alert('El archivo CSV parece estar vacío o tiene un formato incorrecto.');
-                }
-            };
-            reader.readAsText(file);
+            try {
+                const csvText = await file.text();
+                // Acepta LF o CRLF del mismo CSV; no acepta otro contenido.
+                const canonical = csvText.replace(/\r\n/g, '\n');
+                const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(canonical));
+                const hash = Array.from(new Uint8Array(digest), b => b.toString(16).padStart(2, '0')).join('');
+                if (hash !== LOCAL_SHA256) throw new Error('Selecciona el CSV local de EduAnalytics; el contenido de este archivo es diferente.');
+                const parsed = parseCSV(csvText);
+                generateReports(parsed.headers, parsed.data);
+                document.getElementById('fileNameDisplay').textContent = file.name;
+                document.getElementById('fileNameDisplay').title = file.name;
+                document.getElementById('emptyState').classList.add('hidden');
+                document.getElementById('dashboardContent').classList.remove('hidden');
+            } catch (error) {
+                document.getElementById('dashboardContent').classList.add('hidden');
+                document.getElementById('emptyState').classList.remove('hidden');
+                document.getElementById('fileNameDisplay').textContent = 'Archivo pendiente de validación';
+                alert(error.message);
+            }
         });
 
         // Función de utilidad para encontrar nombres de columnas flexíblemente
@@ -207,6 +232,11 @@
             document.getElementById('avgAnxiety').innerText = colAnxiety ? (sumAnxiety / totalStudents).toFixed(1) : 'N/A';
 
             
+            const classCounts = { Low: 0, Medium: 0, High: 0 };
+            data.forEach(row => classCounts[row.Burnout_Risk_Level]++);
+            document.getElementById('kpiHigh').innerText = `${(100 * classCounts.High / totalStudents).toFixed(3)} %`;
+            document.getElementById('classCounts').innerText = `Low ${classCounts.Low}; Medium ${classCounts.Medium}; High ${classCounts.High}`;
+
             // --- GRÁFICO 1: Horas Promedio según Año de Estudio ---
             if (colYear && colAiHours && colTradHours) {
                 const yearData = {};
@@ -225,10 +255,10 @@
                 renderChart('hoursChart', 'bar', {
                     labels: labels,
                     datasets: [
-                        { label: 'Hrs IA Promedio', data: aiAvg, backgroundColor: 'rgba(20, 184, 166, 0.7)', borderColor: 'rgb(20, 184, 166)', borderWidth: 1 },
-                        { label: 'Hrs Tradicionales Promedio', data: tradAvg, backgroundColor: 'rgba(59, 130, 246, 0.7)', borderColor: 'rgb(59, 130, 246)', borderWidth: 1 }
+                        { label: 'Horas semanales de IA (media)', data: aiAvg, backgroundColor: 'rgba(20, 184, 166, 0.7)', borderColor: 'rgb(20, 184, 166)', borderWidth: 1 },
+                        { label: 'Horas semanales de estudio tradicional (media)', data: tradAvg, backgroundColor: 'rgba(59, 130, 246, 0.7)', borderColor: 'rgb(59, 130, 246)', borderWidth: 1 }
                     ]
-                }, { responsive: true, maintainAspectRatio: false });
+                }, { responsive: true, maintainAspectRatio: false, scales: { y: { title: { display: true, text: 'Horas por semana' } } } });
             }
 
             // --- GRÁFICO 2: Distribución por Año de Estudio ---
@@ -249,16 +279,16 @@
                 }, { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'right' } } });
             }
 
-            // --- GRÁFICO 3: Impacto en Retención vs Ansiedad (Agrupado por uso de IA) ---
+            // --- GRÁFICO 3: Retención y ansiedad por intervalo de uso de IA (Agrupado por uso de IA) ---
             if (colRetention && colAnxiety && colAiHours) {
                 // Agrupar por nivel de uso de IA (Bajo, Medio, Alto)
-                const impactData = { 'Bajo (0-5h)': { ret: 0, anx: 0, c: 0 }, 'Medio (6-15h)': { ret: 0, anx: 0, c: 0 }, 'Alto (>15h)': { ret: 0, anx: 0, c: 0 } };
+                const impactData = { 'Bajo (0-5h)': { ret: 0, anx: 0, c: 0 }, 'Medio (>5-15h)': { ret: 0, anx: 0, c: 0 }, 'Alto (>15h)': { ret: 0, anx: 0, c: 0 } };
                 
                 data.forEach(row => {
                     const h = row[colAiHours] || 0;
                     let group = 'Alto (>15h)';
                     if (h <= 5) group = 'Bajo (0-5h)';
-                    else if (h <= 15) group = 'Medio (6-15h)';
+                    else if (h <= 15) group = 'Medio (>5-15h)';
                     
                     impactData[group].ret += row[colRetention];
                     impactData[group].anx += row[colAnxiety];
@@ -275,8 +305,8 @@
                 }, { 
                     responsive: true, maintainAspectRatio: false,
                     scales: { 
-                        y: { type: 'linear', display: true, position: 'left', title: {display:true, text:'Retención'} },
-                        y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, title: {display:true, text:'Ansiedad'} }
+                        y: { type: 'linear', display: true, position: 'left', title: {display:true, text:'Puntuación de retención observada'} },
+                        y1: { type: 'linear', display: true, position: 'right', grid: { drawOnChartArea: false }, title: {display:true, text:'Nivel de ansiedad observado'} }
                     }
                 });
             }

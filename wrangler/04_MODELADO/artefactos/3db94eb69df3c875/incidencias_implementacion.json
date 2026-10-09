@@ -1,0 +1,11 @@
+{
+  "action": "declare textual pos_label=High for macro scorer; create new experiment identity",
+  "current_experiment_budget": 393,
+  "initial_attempt_id": "0b920dab3471db47",
+  "initial_attempt_preserved_in_ignored_cache": ".cache/modelado/intento_inicial_scoring",
+  "initial_dummy_fit_before_scoring_failure": 1,
+  "initial_failure": "ValueError: pos_label=1 is not a valid label",
+  "initial_results_completed": false,
+  "macro_average_uses_all_three_classes": true,
+  "stage": "first Dummy CV fold scoring; before real-model searches"
+}

@@ -1,0 +1,178 @@
+{
+  "candidate_receipts": {
+    "principal/arbol": "7dfbb6c35fea457aad732cc6be1321bb49e1f01437d53088642454dbaf83a173",
+    "principal/dummy": "4329e01cdfdee9e4be21458fe8e8486093d3af24ceea6116bb9584f441baf107",
+    "principal/logistica": "d7850af93f1ebee9ff17409d918c72c1be9ad8cfacd65dc95226e2e51ed61a4c",
+    "principal/random_forest": "c18d67db3cd14b284ad9b32940188c3bc1d8e32419c59c572774083fba0415bf",
+    "reducido/arbol": "82c01ed161a12888bf84f3904c81af38c16504219de309909d83af51074e819e",
+    "reducido/logistica": "4858c34788ac90024f7031bec9e734e44cd88e17e0ec40fa7f6503bf58b3ad71",
+    "reducido/random_forest": "c86dd0284a189c6c2829e03bb0cda0118ecb9cc2b3d3e509fabd488830fb5888"
+  },
+  "cv": {
+    "configurations": 10,
+    "fits": 51,
+    "fold_scores": [
+      0.5414943508249203,
+      0.5409479362468371,
+      0.5360530620837118,
+      0.5439665669819598,
+      0.5354140696482531
+    ],
+    "macro_f1_mean": 0.5395751971571364,
+    "macro_f1_std": 0.003303698229801341
+  },
+  "experiment_id": "3db94eb69df3c875",
+  "final_training": {
+    "new_unfitted_pipeline": true,
+    "no_retuning_after_test": true,
+    "partitions_in_order": [
+      "train",
+      "validation"
+    ],
+    "rows": 42500,
+    "test_rows": 7500
+  },
+  "folds_sha256": "828e8dc686882e8d6e2c09ed1348aa78382c046fb0a578023ca6373392b77347",
+  "hyperparameters": {
+    "clasificador__C": 100,
+    "clasificador__class_weight": null
+  },
+  "improvement_over_dummy": 0.33669407759193304,
+  "input_and_code_hashes": {
+    "code_sha256": {
+      "tools/ejecutar_modelado.py": "15ffbb91a14dba3795bfb8040e8b67d2e8eaffe672709b2ca40641afc953044a",
+      "wrangler/04_MODELADO/eduanalytics_modelado/core.py": "cf2e64edb4d45584fee64bf2fdd54bf8f7bee6575ec493d05ec23750b0de2b74"
+    },
+    "input_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+    "membership_sha256": {
+      "test": "ee8776d4e6c10987aed087aecf017a6d8298978b17120ce24716bd81b1a2818e",
+      "train": "b8ceb4a646692d3ed92917fd753b5cc155a364eac5db5a69a83f6478f80660da",
+      "validation": "d0739661c229bead590deabdf7a4c6da492001c825fc09f5c186b6c21d13e9ac"
+    },
+    "partition_sha256": {
+      "test": "380f4be4f1d48fed8b44a688bdfc9990654238b9ecb9943f18c2651ecc1fc4b8",
+      "train": "ad1350d1a98ea6cbb8f52d572c930257f5f3010033a0ca9969109d32e15e15fc",
+      "validation": "218af598fa78428fddafd4b530d3563d985a7ada0a2b4ffe758ea2cff3369e0e"
+    },
+    "phase3_manifest_sha256": "50cd682633fde10258bbb8312d2f88f084077f6f537c17e47b2fe009fd2d3981",
+    "requirements_lock_sha256": "7e12418e954ee12543bbde66fde5ae4ed1b8287e8046e0a87736a0c98ffde49b"
+  },
+  "model": "logistica",
+  "predictors": [
+    "Major_Category",
+    "Year_of_Study",
+    "Pre_Semester_GPA",
+    "Weekly_GenAI_Hours",
+    "Primary_Use_Case",
+    "Prompt_Engineering_Skill",
+    "Tool_Diversity",
+    "Paid_Subscription",
+    "Traditional_Study_Hours",
+    "Perceived_AI_Dependency",
+    "Institutional_Policy",
+    "Anxiety_Level_During_Exams",
+    "Post_Semester_GPA",
+    "Skill_Retention_Score"
+  ],
+  "protocol_sha256": "bd38e7552d627286cae63e7ac35aa4deb1ce8b463cc9791ae63e97517a14dd61",
+  "reason": "Mayor Macro F1 en validación; desempates predefinidos si corresponde.",
+  "rule": {
+    "baseline": "reference; report lack of improvement explicitly",
+    "candidates": [
+      "logistica",
+      "arbol",
+      "random_forest"
+    ],
+    "metric": "validation_macro_f1",
+    "scenario": "principal",
+    "tie_atol": 1e-12,
+    "tie_breakers": [
+      "recall_High",
+      "logistica < arbol < random_forest",
+      "structural_cost"
+    ]
+  },
+  "scenario": "principal",
+  "schema_version": 1,
+  "seed": 42,
+  "validation": {
+    "accuracy": 0.5337333333333333,
+    "by_class": {
+      "High": {
+        "f1": 0.5550031075201989,
+        "precision": 0.6639405204460966,
+        "precision_undefined": false,
+        "recall": 0.4767752269087026,
+        "support": 1873
+      },
+      "Low": {
+        "f1": 0.5097870509787051,
+        "precision": 0.540109389243391,
+        "precision_undefined": false,
+        "recall": 0.48268839103869654,
+        "support": 2455
+      },
+      "Medium": {
+        "f1": 0.5397448478900884,
+        "precision": 0.4859883867710174,
+        "precision_undefined": false,
+        "recall": 0.6068726355611601,
+        "support": 3172
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        1185,
+        1210,
+        60
+      ],
+      [
+        855,
+        1925,
+        392
+      ],
+      [
+        154,
+        826,
+        893
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.48268839103869654,
+        0.49287169042769857,
+        0.024439918533604887
+      ],
+      [
+        0.26954602774274905,
+        0.6068726355611601,
+        0.1235813366960908
+      ],
+      [
+        0.08222103577148959,
+        0.4410037373198078,
+        0.4767752269087026
+      ]
+    ],
+    "macro_f1": 0.5348450021296641
+  },
+  "versions": {
+    "Python": "3.10.6",
+    "ipykernel": "7.3.0",
+    "joblib": "1.6.0",
+    "matplotlib": "3.10.9",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "seaborn": "0.13.2",
+    "threadpoolctl": "3.7.0"
+  }
+}

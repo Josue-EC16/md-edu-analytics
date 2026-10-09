@@ -26,8 +26,6 @@ El proyecto analiza asociaciones presentes en el dataset; la etiqueta de riesgo 
 
 Para más detalles, consultar la [información general del proyecto](docs/INFORMACION_GENERAL_PROYECTO_EDUANALYTICS.md).
 
-## Entorno de Ejecución Local
+El flujo principal es la secuencia de Fases 1, 2 y 3 en `wrangler`. `notebook_eduanalytics_md.ipynb` es un análisis complementario ejecutable. El alcance es clasificación retrospectiva de registros completos; UNIFRANZ es la universidad del equipo, no una procedencia acreditada del dataset.
 
-Este proyecto utiliza un entorno virtual (`.venv`) unificado para garantizar la consistencia en la ejecución de los notebooks.
-- **Versión de Python alineada:** `3.10.6`
-- **Dependencias:** Las librerías necesarias (`pandas`, `numpy`, `matplotlib`, `seaborn`, `statsmodels`, `scikit-learn`, `ipykernel`) se instalan localmente desde el `requirements.txt`. Asegúrate de seleccionar el intérprete del `.venv` en tu editor antes de ejecutar cualquier notebook.
+Consultar [instalación y ejecución](docs/ENTORNO_PROYECTO.md), [procedencia verificada](docs/PROCEDENCIA_DATASET.md) y [diccionario](docs/DICCIONARIO_DATOS.md).

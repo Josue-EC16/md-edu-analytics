@@ -1,0 +1,12 @@
+{
+  "files": {
+    "arbol_interpretacion.joblib": "ee1057a3b0ececa5a6a0a7538cab0d092abf193d580f1958c68939274cd88e86",
+    "busqueda_cv.csv": "29f6e500b3e21a27ac7c5f55ef1ca68082f7e9b8c55e7288c912ff7fa6bd0257",
+    "ejecucion.json": "d8c47d1f61cc00ad8d929fad7d1d2a5e38e0c74453a74dd2a4d8aca38a38d168",
+    "importancia_impureza.csv": "779f3d60790f6a158426ae27a0af76597f1fbc071145ed5c511ffe70650004f4",
+    "importancia_permutacion.csv": "4ab6d201e6253193d22e159c743c151a657b688f78ffe8e05dfc38c2adba8e63",
+    "predicciones_validacion.csv": "5d887892cd80370304a9f6c9b62122c702bc9e7df0512493b105c38c58631d7c",
+    "reglas.txt": "0b086da4ae03955ba82039edfc0529c6715dad75bf10b15b30a6cb6e8a7cba43",
+    "resultado.json": "414c54c5e5c7855fa9b4269d030afd52cdf252ee52b631b234ed7a45fbc370a7"
+  }
+}

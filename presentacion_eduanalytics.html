@@ -128,24 +128,24 @@
       <div class="grid-2">
         <div class="card">
           <h3>Objetivo de negocio del proyecto</h3>
-          <p>Identificar patrones de uso de IA generativa y hábitos académicos asociados con niveles elevados de riesgo de burnout, para apoyar la detección de perfiles de mayor riesgo y futuras estrategias de uso responsable de IA en estudiantes.</p>
+          <p>Identificar patrones de uso de IA generativa y hábitos académicos asociados con niveles elevados de riesgo de burnout, para caracterizar perfiles retrospectivos de mayor riesgo y futuras estrategias de uso responsable de IA en estudiantes.</p>
           <div class="pill-row">
             <span class="pill">IA generativa</span>
             <span class="pill">Hábitos académicos</span>
             <span class="pill">Riesgo de burnout</span>
             <span class="pill">Apoyo a decisiones</span>
           </div>
-          <div class="quote">No se busca diagnosticar burnout clínico ni afirmar causalidad; se identifican asociaciones y patrones dentro del dataset.</div>
+          <div class="quote">Clasificación retrospectiva de registros completos, sin diagnóstico clínico ni causalidad. UNIFRANZ es la universidad del equipo. La fórmula de la etiqueta y el origen sintético permanecen sin confirmar.</div>
         </div>
 
         <div class="card">
           <h3>Métrica principal / KPI</h3>
           <div class="big-kpi">24,97%</div>
           <p>Porcentaje de estudiantes clasificados con <b>riesgo alto de burnout</b>.</p>
-          <div class="formula">KPI = (N° High / N° Total) × 100<br>12.487 / 50.000 × 100 = 24,97%</div>
+          <div class="formula">KPI = (N° High / N° Total) × 100<br>12.487 / 50.000 × 100 = 24,974% (24,97% redondeado)</div>
           <div class="mini-stat"><span>Variable usada</span><strong>Burnout_Risk_Level</strong></div>
           <div class="mini-stat"><span>Unidad de medida</span><strong>Porcentaje (%)</strong></div>
-          <div class="mini-stat"><span>Mejora tentativa</span><strong>Reducir respecto a 24,97%</strong></div>
+          <div class="mini-stat"><span>Mejora tentativa</span><strong>Meta futura, sin intervención demostrada</strong></div>
           <p class="small">La mejora es una meta futura; no es un resultado observado todavía.</p>
         </div>
       </div>
@@ -157,7 +157,7 @@
       <div class="eda-layout">
         <div class="card">
           <h3>1. ¿Qué datos tengo?</h3>
-          <div class="mini-stat"><span>Fuente</span><strong>Kaggle</strong></div>
+          <div class="mini-stat"><span>Fuente</span><strong>Kaggle · versión 1 · CC0</strong></div>
           <div class="mini-stat"><span>Archivo</span><strong>ai_student_impact_dataset</strong></div>
           <div class="mini-stat"><span>Registros</span><strong>50.000 estudiantes</strong></div>
           <div class="mini-stat"><span>Variables</span><strong>16 columnas</strong></div>
@@ -239,5 +239,6 @@
       if(e.key === 'End') showSlide(slides.length - 1);
     });
   </script>
+<a href="docs/PROCEDENCIA_DATASET.md" style="position:fixed;bottom:12px;left:32px;color:#B9C3DA;font-size:12px;z-index:20">Procedencia verificada · KPI de etiquetas, sin desempeño predictivo</a>
 </body>
 </html>

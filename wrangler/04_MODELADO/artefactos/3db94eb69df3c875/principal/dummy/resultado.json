@@ -1,0 +1,176 @@
+{
+  "best_params": {},
+  "cv": {
+    "configurations": 1,
+    "fits": 6,
+    "fold_scores": [
+      0.19817287420941673,
+      0.19812583668005354,
+      0.19812583668005354,
+      0.19812583668005354,
+      0.19812583668005354
+    ],
+    "macro_f1_mean": 0.19813524418592618,
+    "macro_f1_std": 1.8815011745276777e-05
+  },
+  "estimator_classes": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "experiment_id": "3db94eb69df3c875",
+  "interpretation": {
+    "majority_class": "Medium"
+  },
+  "model": "dummy",
+  "overfit_gap": -1.567959619713788e-05,
+  "predictors": [
+    "Major_Category",
+    "Year_of_Study",
+    "Pre_Semester_GPA",
+    "Weekly_GenAI_Hours",
+    "Primary_Use_Case",
+    "Prompt_Engineering_Skill",
+    "Tool_Diversity",
+    "Paid_Subscription",
+    "Traditional_Study_Hours",
+    "Perceived_AI_Dependency",
+    "Institutional_Policy",
+    "Anxiety_Level_During_Exams",
+    "Post_Semester_GPA",
+    "Skill_Retention_Score"
+  ],
+  "scenario": "principal",
+  "train": {
+    "accuracy": 0.4228857142857143,
+    "by_class": {
+      "High": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "precision_undefined": true,
+        "recall": 0.0,
+        "support": 8741
+      },
+      "Low": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "precision_undefined": true,
+        "recall": 0.0,
+        "support": 11458
+      },
+      "Medium": {
+        "f1": 0.5944057348246019,
+        "precision": 0.4228857142857143,
+        "precision_undefined": false,
+        "recall": 1.0,
+        "support": 14801
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        0,
+        11458,
+        0
+      ],
+      [
+        0,
+        14801,
+        0
+      ],
+      [
+        0,
+        8741,
+        0
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "macro_f1": 0.19813524494153398
+  },
+  "validation": {
+    "accuracy": 0.42293333333333333,
+    "by_class": {
+      "High": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "precision_undefined": true,
+        "recall": 0.0,
+        "support": 1873
+      },
+      "Low": {
+        "f1": 0.0,
+        "precision": 0.0,
+        "precision_undefined": true,
+        "recall": 0.0,
+        "support": 2455
+      },
+      "Medium": {
+        "f1": 0.5944527736131934,
+        "precision": 0.42293333333333333,
+        "precision_undefined": false,
+        "recall": 1.0,
+        "support": 3172
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        0,
+        2455,
+        0
+      ],
+      [
+        0,
+        3172,
+        0
+      ],
+      [
+        0,
+        1873,
+        0
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0
+      ]
+    ],
+    "macro_f1": 0.19815092453773112
+  }
+}

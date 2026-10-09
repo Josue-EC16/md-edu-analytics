@@ -1,0 +1,63 @@
+{
+  "directed_tests": {
+    "boolean_conversion": "PASS",
+    "changed_protocol_rejected": "PASS",
+    "corrupt_artifact_rejected": "PASS",
+    "fold_only_scaler_and_categories": "PASS",
+    "fresh_instances": "PASS",
+    "metrics_order_and_orientation": "PASS",
+    "scenarios": [
+      14,
+      12
+    ],
+    "test_guard": "PASS",
+    "unknown_categories": "PASS"
+  },
+  "experiment_id": "3db94eb69df3c875",
+  "frozen_selection": "PASS",
+  "full_protocol_fits": 393,
+  "independent_load": {
+    "classes_order": [
+      "High",
+      "Low",
+      "Medium"
+    ],
+    "metrics": "EXACT",
+    "new_process": true,
+    "pipeline_sha256": "006b5a9e0b518633b8c227accb5d5c58d55c633001bc2ceb8092219680581d49",
+    "prediction_rows": 7500,
+    "predictions": "EXACT",
+    "probabilities": "EXACT"
+  },
+  "input_hashes": "PASS",
+  "membership_order_and_coverage": "EXACT",
+  "partitions": [
+    {
+      "High": 8741,
+      "Low": 11458,
+      "Medium": 14801,
+      "partition": "train",
+      "rows": 35000
+    },
+    {
+      "High": 1873,
+      "Low": 2455,
+      "Medium": 3172,
+      "partition": "validation",
+      "rows": 7500
+    },
+    {
+      "High": 1873,
+      "Low": 2456,
+      "Medium": 3171,
+      "partition": "test",
+      "rows": 7500
+    }
+  ],
+  "phase3_manifest_sha256": "50cd682633fde10258bbb8312d2f88f084077f6f537c17e47b2fe009fd2d3981",
+  "reconstruction": "EXACT",
+  "results_receipts": "PASS",
+  "row_and_student_overlap": 0,
+  "selection_before_test": "PASS",
+  "shared_folds": "PASS"
+}

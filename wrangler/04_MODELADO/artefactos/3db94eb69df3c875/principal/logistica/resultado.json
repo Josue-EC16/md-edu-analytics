@@ -1,0 +1,185 @@
+{
+  "best_params": {
+    "clasificador__C": 100,
+    "clasificador__class_weight": null
+  },
+  "cv": {
+    "configurations": 10,
+    "fits": 51,
+    "fold_scores": [
+      0.5414943508249203,
+      0.5409479362468371,
+      0.5360530620837118,
+      0.5439665669819598,
+      0.5354140696482531
+    ],
+    "macro_f1_mean": 0.5395751971571364,
+    "macro_f1_std": 0.003303698229801341
+  },
+  "estimator_classes": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "experiment_id": "3db94eb69df3c875",
+  "interpretation": {
+    "coefficients": 90,
+    "converged": true,
+    "iterations": [
+      22
+    ],
+    "max_iter": 5000,
+    "transformed_features": 30
+  },
+  "model": "logistica",
+  "overfit_gap": 0.005962709847607273,
+  "predictors": [
+    "Major_Category",
+    "Year_of_Study",
+    "Pre_Semester_GPA",
+    "Weekly_GenAI_Hours",
+    "Primary_Use_Case",
+    "Prompt_Engineering_Skill",
+    "Tool_Diversity",
+    "Paid_Subscription",
+    "Traditional_Study_Hours",
+    "Perceived_AI_Dependency",
+    "Institutional_Policy",
+    "Anxiety_Level_During_Exams",
+    "Post_Semester_GPA",
+    "Skill_Retention_Score"
+  ],
+  "scenario": "principal",
+  "train": {
+    "accuracy": 0.5396,
+    "by_class": {
+      "High": {
+        "f1": 0.5574190072068431,
+        "precision": 0.6776940714051752,
+        "precision_undefined": false,
+        "recall": 0.4734012126758952,
+        "support": 8741
+      },
+      "Low": {
+        "f1": 0.5212358731316077,
+        "precision": 0.5453938584779706,
+        "precision_undefined": false,
+        "recall": 0.4991272473381044,
+        "support": 11458
+      },
+      "Medium": {
+        "f1": 0.5437682555933633,
+        "precision": 0.49049326379834857,
+        "precision_undefined": false,
+        "recall": 0.6100263495709749,
+        "support": 14801
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        5719,
+        5464,
+        275
+      ],
+      [
+        4079,
+        9029,
+        1693
+      ],
+      [
+        688,
+        3915,
+        4138
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.4991272473381044,
+        0.4768720544597661,
+        0.024000698202129515
+      ],
+      [
+        0.27558948719681103,
+        0.6100263495709749,
+        0.11438416323221404
+      ],
+      [
+        0.07870952980208214,
+        0.44788925752202263,
+        0.4734012126758952
+      ]
+    ],
+    "macro_f1": 0.5408077119772714
+  },
+  "validation": {
+    "accuracy": 0.5337333333333333,
+    "by_class": {
+      "High": {
+        "f1": 0.5550031075201989,
+        "precision": 0.6639405204460966,
+        "precision_undefined": false,
+        "recall": 0.4767752269087026,
+        "support": 1873
+      },
+      "Low": {
+        "f1": 0.5097870509787051,
+        "precision": 0.540109389243391,
+        "precision_undefined": false,
+        "recall": 0.48268839103869654,
+        "support": 2455
+      },
+      "Medium": {
+        "f1": 0.5397448478900884,
+        "precision": 0.4859883867710174,
+        "precision_undefined": false,
+        "recall": 0.6068726355611601,
+        "support": 3172
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        1185,
+        1210,
+        60
+      ],
+      [
+        855,
+        1925,
+        392
+      ],
+      [
+        154,
+        826,
+        893
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.48268839103869654,
+        0.49287169042769857,
+        0.024439918533604887
+      ],
+      [
+        0.26954602774274905,
+        0.6068726355611601,
+        0.1235813366960908
+      ],
+      [
+        0.08222103577148959,
+        0.4410037373198078,
+        0.4767752269087026
+      ]
+    ],
+    "macro_f1": 0.5348450021296641
+  }
+}

@@ -6,7 +6,7 @@
   "input": {
     "path": "dataset/ai_student_impact_dataset (1).csv",
     "file": "ai_student_impact_dataset (1).csv",
-    "sha256": "afd5615d273f199988cf172fdb985c5d9298a018c2d386698ac4c7dc7328d694",
+    "sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
     "rows": 50000,
     "columns": 16,
     "separator": ";",
@@ -19,22 +19,27 @@
     "high_kpi_percent_exact": "24.974"
   },
   "references": {
-    "README.md": "465bcac9c70daa4613a03f81d2cfcc5c74dfa940ff7c4908fa7534cdf962522b",
-    "docs/INFORMACION_GENERAL_PROYECTO_EDUANALYTICS.md": "9cd0cdb1ab0d1af239a29490396aaeed9fe13c41ca39ec74c3650268d2cff74a",
-    "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb": "7688bd9d410ce95ed2943887e27af11512f0cff3d9fcc5d59e543fea291d5aa4",
-    "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb": "d7d23266f58d2b37740e8039cf9340a6b1916515a558ba6b0eabb6ecd86715bc"
+    "README.md": "e5796a84b1170d8aaadfc219264e3b919688a263de64e9d683fe966d896c5e39",
+    "docs/INFORMACION_GENERAL_PROYECTO_EDUANALYTICS.md": "042702df3105e916348244bc54d49816ffd182a281250044ef499265039f39a6",
+    "docs/PROCEDENCIA_DATASET.md": "04bebea1ede015e9fbab4d3cf5f350eb541cbbeebf138fbfd4ec1991be936cf7",
+    "docs/DICCIONARIO_DATOS.md": "09a314c42baad8b30b5a1b9c1a490b7873c93c6968fda24778d68686b3be95b4",
+    "docs/ENTORNO_PROYECTO.md": "cc49112f49a6204ad78017fa76d395a55fbd3b198837885ceeb416416859ac4e",
+    "requirements.txt": "1b625b7d44ec00a016ff5d88180c24b20e3e237734d47c5182c9aaabcb344df5",
+    "requirements-lock.txt": "7e12418e954ee12543bbde66fde5ae4ed1b8287e8046e0a87736a0c98ffde49b",
+    "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb": "bb1a9e890bebc5ba321d867ff25012f00114f758a5e65e642c2c8bfad57e3c44",
+    "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb": "605b58780dc707ef06e69e0fe8f752d00fe4556487565132c023d0ce99c0088b"
   },
   "previous_csv_checks": [
     {
       "Notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
       "Ruta CSV declarada": "dataset/ai_student_impact_dataset (1).csv",
-      "SHA-256 guardado": "afd5615d273f199988cf172fdb985c5d9298a018c2d386698ac4c7dc7328d694",
+      "SHA-256 guardado": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
       "Coincide": true
     },
     {
       "Notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
       "Ruta CSV declarada": "dataset/ai_student_impact_dataset (1).csv",
-      "SHA-256 guardado": "afd5615d273f199988cf172fdb985c5d9298a018c2d386698ac4c7dc7328d694",
+      "SHA-256 guardado": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
       "Coincide": true
     }
   ],
@@ -49,7 +54,12 @@
     "procedure": "train_test_split test_size=0.30; remainder split test_size=0.50; seed=42 in both",
     "ordering": "Orden devuelto por train_test_split, sin ordenar ni volver a barajar",
     "group_check": "Student_ID único: no hay grupos repetidos; bloquear división por filas si aparecen",
-    "row_id": "Posición de fila original desde cero; sin cabecera"
+    "row_id": "Posición de fila original desde cero; sin cabecera",
+    "membership_sha256": {
+      "train": "b8ceb4a646692d3ed92917fd753b5cc155a364eac5db5a69a83f6478f80660da",
+      "validation": "d0739661c229bead590deabdf7a4c6da492001c825fc09f5c186b6c21d13e9ac",
+      "test": "ee8776d4e6c10987aed087aecf017a6d8298978b17120ce24716bd81b1a2818e"
+    }
   },
   "schema": {
     "original_columns": [
@@ -205,9 +215,9 @@
       "Registros excluidos": 0
     },
     {
-      "Problema o resultado del control": "Diferencias textuales con docs",
+      "Problema o resultado del control": "Categorías alineadas con docs",
       "Variables/registros afectados": "Primary_Use_Case",
-      "Regla aplicada": "Documentar sin reemplazar valores",
+      "Regla aplicada": "Conservar nombres exactos",
       "Justificación": "Summarizing_Reading y Direct_Answer_Generation son los nombres del CSV",
       "Registros modificados": 0,
       "Registros excluidos": 0
@@ -298,14 +308,26 @@
     "ipykernel": "7.3.0",
     "nbformat": "5.11.1",
     "nbclient": "0.11.0",
-    "nbconvert": "7.17.1"
+    "nbconvert": "7.17.1",
+    "matplotlib": "3.10.9",
+    "seaborn": "0.13.2",
+    "ipython": "8.39.0"
   },
   "limitations": [
-    "Procedencia y carácter sintético no confirmados; sin diagnóstico clínico",
+    "Publicación verificada; recolección y carácter sintético no confirmados; sin diagnóstico clínico",
     "Fórmula de etiqueta desconocida y posible circularidad",
     "Disponibilidad temporal no acreditada; sin detección anticipada",
     "Fase 2 exploró el CSV completo: prueba no es una cohorte externa nunca inspeccionada"
   ],
+  "provenance": {
+    "url": "https://www.kaggle.com/datasets/ranaghulamnabi/ai-usage-and-student-academic-performance-analysis",
+    "publisher": "ranaghulamnabi",
+    "version": 1,
+    "license": "CC0: Public Domain",
+    "consultation_date": "2026-10-09",
+    "original_sha256": "4d911088c4b12d60a450a9acae6b606f4119ebbb48679518e427a4fc00778472"
+  },
+  "content_sha256": "21b6b0658b1c909045bed401a821f417f82bb9f86795ff9f346473339379d23d",
   "artifacts": {
     "train.csv": {
       "sha256": "ad1350d1a98ea6cbb8f52d572c930257f5f3010033a0ca9969109d32e15e15fc",
@@ -324,20 +346,20 @@
       "bytes": 3116
     },
     "decisiones_limpieza.csv": {
-      "sha256": "30da68b598fc5ddb5935263d6a367efc7a113739cbedda0ba1828675a5db9aba",
-      "bytes": 1275
+      "sha256": "315eb7368fb3606479952015673b71d301d62a2fc647dd8d3f94fdca324ca062",
+      "bytes": 1267
     },
     "preprocesamiento.py": {
-      "sha256": "e5733d3c670a1929edcf8f2f76433c23d3969a00cbad3782e421c7981641315d",
-      "bytes": 4661
+      "sha256": "c4f370181164f711cb6fa10c36c67e6d7ca082b7be852d9d6958c1efdbf873d5",
+      "bytes": 5526
     },
     "INSTRUCCIONES_FASE4.md": {
-      "sha256": "52626642b3c640e416f903dc8749c007349222d8c977befb7ae6679613854d17",
-      "bytes": 4456
+      "sha256": "f2c90303cda08bfb29f962b30620da68bc406a032a84b28989745ea9074aba0e",
+      "bytes": 4590
     },
     "requirements_preparacion.txt": {
-      "sha256": "bf1c2e13ed172cc1b6fa5ee19976d7af22be61a2b00dfe1a402fd491504022b4",
-      "bytes": 196
+      "sha256": "db94247c199f1e71c7503451c573551df039fbf65cb817603ffc2d7757da8a7f",
+      "bytes": 89
     }
   }
 }

@@ -1,7 +1,7 @@
 # EduAnalytics: carga y modelado posterior a Fase 3
 
 Estos archivos corresponden a clasificación retrospectiva multiclase de Burnout_Risk_Level.
-Las etiquetas no son diagnósticos clínicos; procedencia y fórmula de generación siguen pendientes.
+Las etiquetas no son diagnósticos clínicos. Publicación Kaggle, versión 1 y licencia CC0 verificadas; fórmula, instrumentos y origen sintético pendientes. Véase docs/PROCEDENCIA_DATASET.md.
 
 ## Archivos
 
@@ -73,7 +73,7 @@ Fase 4 antes de evaluar prueba y mantendrá prueba completamente fuera de todo a
   continuidad, sin seleccionar modelos con prueba. La Fase 2 exploró el mismo CSV completo:
   prueba no puede considerarse una cohorte externa nunca inspeccionada. La selección de modelos
   debe respetar el bloqueo actual y una validación externa requeriría datos nuevos.
-- Confirmar fuente original, escala GPA, instrumentos, momentos de observación y fórmula de etiqueta.
+- La publicación original está verificada. Confirmar recolección, escala GPA, instrumentos, momentos de observación y fórmula de etiqueta.
 - Evaluar sensibilidad sin GPA final y retención con las mismas particiones. Eso no convierte
   automáticamente al resto de variables en información disponible para detección anticipada.
 - Investigar posible circularidad de horas, dependencia, ansiedad u otros predictores con la etiqueta.

@@ -1,0 +1,118 @@
+{
+  "classes": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "estimator_classes": [
+    "High",
+    "Low",
+    "Medium"
+  ],
+  "experiment_id": "3db94eb69df3c875",
+  "hyperparameters": {
+    "clasificador__C": 100,
+    "clasificador__class_weight": null
+  },
+  "model": "logistica",
+  "predictors": [
+    "Major_Category",
+    "Year_of_Study",
+    "Pre_Semester_GPA",
+    "Weekly_GenAI_Hours",
+    "Primary_Use_Case",
+    "Prompt_Engineering_Skill",
+    "Tool_Diversity",
+    "Paid_Subscription",
+    "Traditional_Study_Hours",
+    "Perceived_AI_Dependency",
+    "Institutional_Policy",
+    "Anxiety_Level_During_Exams",
+    "Post_Semester_GPA",
+    "Skill_Retention_Score"
+  ],
+  "scenario": "principal",
+  "selection_sha256": "1cbf4773cd350fe63d7e88a2864c49615364d962dcabf8a866f9bbf5a4f8be66",
+  "test": {
+    "accuracy": 0.5352,
+    "by_class": {
+      "High": {
+        "f1": 0.5390972663699937,
+        "precision": 0.6661429693637078,
+        "precision_undefined": false,
+        "recall": 0.45274959957287775,
+        "support": 1873
+      },
+      "Low": {
+        "f1": 0.5213128729752771,
+        "precision": 0.5469588550983899,
+        "precision_undefined": false,
+        "recall": 0.4979641693811075,
+        "support": 2456
+      },
+      "Medium": {
+        "f1": 0.5425858698687518,
+        "precision": 0.4868454021548484,
+        "precision_undefined": false,
+        "recall": 0.6127404604225797,
+        "support": 3171
+      }
+    },
+    "classes": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "confusion": [
+      [
+        1223,
+        1180,
+        53
+      ],
+      [
+        856,
+        1943,
+        372
+      ],
+      [
+        157,
+        868,
+        848
+      ]
+    ],
+    "confusion_normalized": [
+      [
+        0.4979641693811075,
+        0.4804560260586319,
+        0.021579804560260585
+      ],
+      [
+        0.26994638915168717,
+        0.6127404604225797,
+        0.1173131504257332
+      ],
+      [
+        0.08382274426054458,
+        0.46342765616657766,
+        0.45274959957287775
+      ]
+    ],
+    "macro_f1": 0.5343320030713409
+  },
+  "test_rows": 7500,
+  "training_rows": 42500,
+  "versions": {
+    "Python": "3.10.6",
+    "ipykernel": "7.3.0",
+    "joblib": "1.6.0",
+    "matplotlib": "3.10.9",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "seaborn": "0.13.2",
+    "threadpoolctl": "3.7.0"
+  }
+}

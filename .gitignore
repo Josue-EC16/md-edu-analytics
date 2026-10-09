@@ -1,0 +1,20 @@
+# Entornos locales
+.venv/
+venv/
+
+# Cachés y archivos generados por Python
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.cache/
+
+# Configuración privada local
+.env
+.env.*
+!.env.example
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db

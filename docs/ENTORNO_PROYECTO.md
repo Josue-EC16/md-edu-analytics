@@ -1,28 +1,53 @@
-# Configuración del Entorno del Proyecto
+# Entorno reproducible de EduAnalytics
 
-Este documento resume las acciones realizadas para configurar correctamente el entorno de ejecución local de los notebooks del proyecto (`notebook_eduanalytics_md.ipynb` y `H3_1_Regresion_Logistica_EduAnalytics.ipynb`).
+## Python y dependencias
 
-### 1. Creación del Entorno Virtual (`.venv`)
-- Se inicializó un entorno virtual aislado en la carpeta raíz del proyecto (`c:\md-edu-analytics\.venv`).
-- El objetivo de esto es evitar conflictos de versiones y aislar las librerías usadas en este proyecto de la instalación global de Python.
+Usar **Python 3.10.6**. Confirmar `python --version` antes de crear el entorno; otra versión no acredita la verificación solicitada. Desde la raíz de una copia nueva:
 
-### 2. Creación del archivo `requirements.txt`
-- Se creó un archivo listando las dependencias base requeridas para ejecutar el código y visualizar los datos. Las librerías incluidas fueron:
-  - `pandas`
-  - `numpy`
-  - `matplotlib`
-  - `seaborn`
-  - `statsmodels`
-  - `scikit-learn`
-  - `ipykernel` (necesaria para ejecutar Jupyter Notebooks dentro del editor)
+```powershell
+python -m venv .venv
+.venv/Scripts/python.exe -m pip install -r requirements.txt
+.venv/Scripts/python.exe -m pip check
+```
 
-### 3. Instalación de Dependencias
-- Se ejecutó el comando de instalación usando `pip install -r requirements.txt` apuntando directamente al entorno `.venv` recién creado, descargando e instalando satisfactoriamente todas las herramientas de ciencia de datos.
+En Linux/macOS el ejecutable del entorno es `.venv/bin/python`. La instalación y verificación de cierre se realizan con Python 3.10.6 en Windows; no se atribuye una prueba a otros sistemas operativos. El entorno local no se versiona. No eliminar ni reemplazar un entorno existente para verificar: crear uno nuevo en un directorio temporal.
 
-### 4. Corrección de Ruta del Dataset
-- Se detectó y recomendó solucionar un error oculto en la **Celda 4** de `notebook_eduanalytics_md.ipynb`.
-- **Ruta original:** `/mnt/data/ai_student_impact_dataset (1).csv` (pensada para entornos como Google Colab).
-- **Ruta corregida:** `dataset/ai_student_impact_dataset (1).csv` (ruta local dentro del proyecto).
+El archivo principal fija las dependencias directas de los cuatro notebooks y de su ejecución automática. `requirements-lock.txt` fija las 66 dependencias resueltas del entorno nuevo y se aplica como archivo de restricciones; no procede de `.venv`. `wrangler/03_PREPARACION_DATOS/artefactos/requirements_preparacion.txt` referencia ese mismo archivo principal, evitando versiones divergentes. `statsmodels` no se importa en estos notebooks y se retiró de los requisitos; regresión y clustering son propuestas secundarias.
 
-### 5. Selección del Intérprete en el IDE
-- Se indicó el último paso manual para el usuario: elegir el entorno virtual (ruta: `.venv/Scripts/python.exe`) como el intérprete / Kernel oficial de Python en el editor, eliminando así las advertencias de importación (errores "missing-import") del analizador Pyrefly.
+## Selección del kernel y ejecución
+
+En VS Code seleccionar el intérprete `.venv/Scripts/python.exe` y el kernel de ese entorno. Para Jupyter con un kernel nombrado, usar `.venv/Scripts/python.exe -m ipykernel install --user --name eduanalytics-py3106 --display-name "EduAnalytics Python 3.10.6"`. Seleccionar ese kernel; no reutilizar variables de una sesión anterior.
+
+La secuencia principal es:
+
+1. `wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb`.
+2. `wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb`.
+3. `wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb`.
+
+Después ejecutar el análisis complementario `notebook_eduanalytics_md.ipynb`. No hay clasificadores ejecutados en estas fases. El notebook complementario también puede ejecutarse desde cualquiera de las carpetas de fases: resuelve la raíz buscando README y docs entre los padres del directorio actual.
+
+Todos leen `dataset/ai_student_impact_dataset (1).csv` con `sep=';'`, UTF-8 compatible con BOM y rutas relativas. Los notebooks de wrangler funcionan desde la raíz o su propia carpeta. Ejecutar **Restart Kernel and Run All** y guardar las salidas. Para ejecución automática se dispone de nbclient/nbconvert; seleccionar explícitamente el intérprete 3.10.6 que lanza el kernel.
+
+## Finales de línea e integridad
+
+`.gitattributes` fija LF para CSV, notebooks, código y documentación. Las huellas SHA-256 se calculan sobre bytes definitivos, sin tolerar diferencias en silencio. Guardar notebooks explícitamente con LF. Si cambian datos o documentación, ejecutar de nuevo las fases en orden: Fase 3 depende de las huellas guardadas de Fases 1–2 y regenera el manifiesto.
+
+No modificar un notebook previo después de generar el manifiesto sin repetir Fase 3. La pertenencia actual de las particiones está congelada mediante huellas de identificadores; regenerar no autoriza cambiar muestras.
+
+## Materiales HTML
+
+La presentación es HTML local con navegación por botones/teclado. El reporte permite cargar el mismo CSV y calcula sus resúmenes en navegador. El reporte utiliza CDN de Chart.js, Tailwind y fuentes: necesita conexión para esos recursos. Esa dependencia visual es independiente de la ejecución local de los notebooks.
+
+El reporte de cierre en `VERIFICACION_FASES_1_2_3.md` distingue controles ejecutados y verificaciones pendientes, incluida la presentación en navegador cuando no está disponible.
+
+## Verificación ejecutable
+
+```powershell
+.venv/Scripts/python.exe tools/verificar_proyecto.py
+.venv/Scripts/python.exe tools/verificar_proyecto.py --ejecutar --desde raiz
+.venv/Scripts/python.exe tools/verificar_proyecto.py --ejecutar --desde carpetas
+```
+
+El verificador comprueba archivos y salidas guardadas; con `--ejecutar` inicia un kernel limpio por notebook y guarda las salidas en LF, en orden. Las copias diagnósticas de preprocesadores se ajustan solo con entrenamiento y se descartan. No se entrenan clasificadores. Las huellas de prueba se revisan solo para integridad.
+
+Para verificar la lógica de los HTML sin navegador: `node tools/verificar_html.js` (Node 22.12.0 comprobado). Esta prueba simula DOM y Chart; no acredita diseño visual ni carga real de CDN.

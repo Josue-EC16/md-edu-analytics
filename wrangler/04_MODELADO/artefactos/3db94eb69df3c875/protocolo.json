@@ -1,0 +1,435 @@
+{
+  "budgets": {
+    "arbol": 16,
+    "logistica": 10,
+    "random_forest": 12
+  },
+  "classes": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "code_sha256": {
+    "tools/ejecutar_modelado.py": "15ffbb91a14dba3795bfb8040e8b67d2e8eaffe672709b2ca40641afc953044a",
+    "wrangler/04_MODELADO/eduanalytics_modelado/core.py": "cf2e64edb4d45584fee64bf2fdd54bf8f7bee6575ec493d05ec23750b0de2b74"
+  },
+  "configurations": {
+    "arbol": [
+      {
+        "clasificador__ccp_alpha": 0.0001,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 12,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 50
+      },
+      {
+        "clasificador__ccp_alpha": 0.0,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 12,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.001,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 12,
+        "clasificador__min_samples_leaf": 100,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.001,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 3,
+        "clasificador__min_samples_leaf": 1,
+        "clasificador__min_samples_split": 50
+      },
+      {
+        "clasificador__ccp_alpha": 0.0,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": null,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 50
+      },
+      {
+        "clasificador__ccp_alpha": 0.001,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 8,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 50
+      },
+      {
+        "clasificador__ccp_alpha": 0.0,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 5,
+        "clasificador__min_samples_leaf": 10,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.0,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": null,
+        "clasificador__min_samples_leaf": 100,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.001,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 3,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 50
+      },
+      {
+        "clasificador__ccp_alpha": 0.0001,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 3,
+        "clasificador__min_samples_leaf": 10,
+        "clasificador__min_samples_split": 10
+      },
+      {
+        "clasificador__ccp_alpha": 0.0,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 5,
+        "clasificador__min_samples_leaf": 100,
+        "clasificador__min_samples_split": 10
+      },
+      {
+        "clasificador__ccp_alpha": 0.001,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": null,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.0001,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 8,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.001,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 12,
+        "clasificador__min_samples_leaf": 10,
+        "clasificador__min_samples_split": 2
+      },
+      {
+        "clasificador__ccp_alpha": 0.0,
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": null,
+        "clasificador__min_samples_leaf": 100,
+        "clasificador__min_samples_split": 50
+      },
+      {
+        "clasificador__ccp_alpha": 0.0001,
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 3,
+        "clasificador__min_samples_leaf": 50,
+        "clasificador__min_samples_split": 2
+      }
+    ],
+    "logistica": [
+      {
+        "clasificador__C": 0.01,
+        "clasificador__class_weight": null
+      },
+      {
+        "clasificador__C": 0.01,
+        "clasificador__class_weight": "balanced"
+      },
+      {
+        "clasificador__C": 0.1,
+        "clasificador__class_weight": null
+      },
+      {
+        "clasificador__C": 0.1,
+        "clasificador__class_weight": "balanced"
+      },
+      {
+        "clasificador__C": 1,
+        "clasificador__class_weight": null
+      },
+      {
+        "clasificador__C": 1,
+        "clasificador__class_weight": "balanced"
+      },
+      {
+        "clasificador__C": 10,
+        "clasificador__class_weight": null
+      },
+      {
+        "clasificador__C": 10,
+        "clasificador__class_weight": "balanced"
+      },
+      {
+        "clasificador__C": 100,
+        "clasificador__class_weight": null
+      },
+      {
+        "clasificador__C": 100,
+        "clasificador__class_weight": "balanced"
+      }
+    ],
+    "random_forest": [
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 8,
+        "clasificador__max_features": "sqrt",
+        "clasificador__min_samples_leaf": 20,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": null,
+        "clasificador__max_features": "sqrt",
+        "clasificador__min_samples_leaf": 5,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 16,
+        "clasificador__max_features": 0.5,
+        "clasificador__min_samples_leaf": 1,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 8,
+        "clasificador__max_features": "sqrt",
+        "clasificador__min_samples_leaf": 1,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": null,
+        "clasificador__max_features": "sqrt",
+        "clasificador__min_samples_leaf": 20,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 16,
+        "clasificador__max_features": "sqrt",
+        "clasificador__min_samples_leaf": 5,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 8,
+        "clasificador__max_features": 0.5,
+        "clasificador__min_samples_leaf": 20,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": null,
+        "clasificador__max_features": 0.5,
+        "clasificador__min_samples_leaf": 20,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": 16,
+        "clasificador__max_features": "sqrt",
+        "clasificador__min_samples_leaf": 1,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 16,
+        "clasificador__max_features": 0.5,
+        "clasificador__min_samples_leaf": 1,
+        "clasificador__n_estimators": 150
+      },
+      {
+        "clasificador__class_weight": "balanced",
+        "clasificador__max_depth": 8,
+        "clasificador__max_features": 0.5,
+        "clasificador__min_samples_leaf": 20,
+        "clasificador__n_estimators": 300
+      },
+      {
+        "clasificador__class_weight": null,
+        "clasificador__max_depth": null,
+        "clasificador__max_features": 0.5,
+        "clasificador__min_samples_leaf": 1,
+        "clasificador__n_estimators": 300
+      }
+    ]
+  },
+  "cv": {
+    "n_splits": 5,
+    "random_state": 42,
+    "shuffle": true
+  },
+  "fit_budget": {
+    "candidate_refits": 6,
+    "dummy_cv_and_refit": 6,
+    "final_refit": 1,
+    "search_cv": 380,
+    "total": 393
+  },
+  "input_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+  "logistic_fixed": {
+    "max_iter": 5000,
+    "penalty": "l2",
+    "solver": "lbfgs",
+    "tol": 0.0001
+  },
+  "membership_sha256": {
+    "test": "ee8776d4e6c10987aed087aecf017a6d8298978b17120ce24716bd81b1a2818e",
+    "train": "b8ceb4a646692d3ed92917fd753b5cc155a364eac5db5a69a83f6478f80660da",
+    "validation": "d0739661c229bead590deabdf7a4c6da492001c825fc09f5c186b6c21d13e9ac"
+  },
+  "parallelism": {
+    "forest_n_jobs": 1,
+    "numerical_threads": 1,
+    "search_n_jobs": 1
+  },
+  "partition_sha256": {
+    "test": "380f4be4f1d48fed8b44a688bdfc9990654238b9ecb9943f18c2651ecc1fc4b8",
+    "train": "ad1350d1a98ea6cbb8f52d572c930257f5f3010033a0ca9969109d32e15e15fc",
+    "validation": "218af598fa78428fddafd4b530d3563d985a7ada0a2b4ffe758ea2cff3369e0e"
+  },
+  "permutation": {
+    "n_repeats": 5,
+    "random_state": 42,
+    "scoring": "macro_f1"
+  },
+  "phase3_manifest_sha256": "50cd682633fde10258bbb8312d2f88f084077f6f537c17e47b2fe009fd2d3981",
+  "predictors": {
+    "principal": [
+      "Major_Category",
+      "Year_of_Study",
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Tool_Diversity",
+      "Paid_Subscription",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Institutional_Policy",
+      "Anxiety_Level_During_Exams",
+      "Post_Semester_GPA",
+      "Skill_Retention_Score"
+    ],
+    "reducido": [
+      "Major_Category",
+      "Year_of_Study",
+      "Pre_Semester_GPA",
+      "Weekly_GenAI_Hours",
+      "Primary_Use_Case",
+      "Prompt_Engineering_Skill",
+      "Tool_Diversity",
+      "Paid_Subscription",
+      "Traditional_Study_Hours",
+      "Perceived_AI_Dependency",
+      "Institutional_Policy",
+      "Anxiety_Level_During_Exams"
+    ]
+  },
+  "requirements_lock_sha256": "7e12418e954ee12543bbde66fde5ae4ed1b8287e8046e0a87736a0c98ffde49b",
+  "schema_version": 1,
+  "scope": "retrospective; non-causal; non-clinical; label formula unknown",
+  "seed": 42,
+  "selection": {
+    "baseline": "reference; report lack of improvement explicitly",
+    "candidates": [
+      "logistica",
+      "arbol",
+      "random_forest"
+    ],
+    "metric": "validation_macro_f1",
+    "scenario": "principal",
+    "tie_atol": 1e-12,
+    "tie_breakers": [
+      "recall_High",
+      "logistica < arbol < random_forest",
+      "structural_cost"
+    ]
+  },
+  "spaces": {
+    "arbol": {
+      "clasificador__ccp_alpha": [
+        0.0,
+        0.0001,
+        0.001
+      ],
+      "clasificador__class_weight": [
+        null,
+        "balanced"
+      ],
+      "clasificador__max_depth": [
+        3,
+        5,
+        8,
+        12,
+        null
+      ],
+      "clasificador__min_samples_leaf": [
+        1,
+        10,
+        50,
+        100
+      ],
+      "clasificador__min_samples_split": [
+        2,
+        10,
+        50
+      ]
+    },
+    "logistica": {
+      "clasificador__C": [
+        0.01,
+        0.1,
+        1,
+        10,
+        100
+      ],
+      "clasificador__class_weight": [
+        null,
+        "balanced"
+      ]
+    },
+    "random_forest": {
+      "clasificador__class_weight": [
+        null,
+        "balanced"
+      ],
+      "clasificador__max_depth": [
+        8,
+        16,
+        null
+      ],
+      "clasificador__max_features": [
+        "sqrt",
+        0.5
+      ],
+      "clasificador__min_samples_leaf": [
+        1,
+        5,
+        20
+      ],
+      "clasificador__n_estimators": [
+        150,
+        300
+      ]
+    }
+  },
+  "test_policy": "load labels only after selection receipt; no retuning after test",
+  "versions": {
+    "Python": "3.10.6",
+    "ipykernel": "7.3.0",
+    "joblib": "1.6.0",
+    "matplotlib": "3.10.9",
+    "nbclient": "0.11.0",
+    "nbformat": "5.11.1",
+    "numpy": "2.2.6",
+    "pandas": "2.3.3",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.15.3",
+    "seaborn": "0.13.2",
+    "threadpoolctl": "3.7.0"
+  }
+}

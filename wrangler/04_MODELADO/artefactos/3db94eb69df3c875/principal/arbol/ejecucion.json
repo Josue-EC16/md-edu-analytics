@@ -1,0 +1,10 @@
+{
+  "candidate_cache_sha256": "c93d5278ebf6534f9e80ba658ee069ec9536d57410853185283d29de181c2fca",
+  "fits": 81,
+  "inference_includes": "predict and predict_proba; full pipeline",
+  "search_and_refit_seconds": 27.546803900040686,
+  "selected_refit_seconds": 0.1902461051940918,
+  "started_utc": "2026-10-09T19:42:09.288591+00:00",
+  "train_inference_seconds": 0.07107480010017753,
+  "validation_inference_seconds": 0.020276499912142754
+}

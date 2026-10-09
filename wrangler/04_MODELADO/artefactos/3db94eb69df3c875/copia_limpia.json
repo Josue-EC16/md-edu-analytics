@@ -1,0 +1,161 @@
+{
+  "candidate_searches_repeated": 0,
+  "copy_manifest_hashes": "PASS",
+  "copy_relative_path": ".cache/modelado/contenido_final_1f5j35y6",
+  "excluded_environments_and_caches": true,
+  "git_filters_preserve_bytes": "PASS",
+  "initial_files": 159,
+  "phase1_2_3": {
+    "Python": "3.10.6",
+    "classes": {
+      "High": 12487,
+      "Low": 16369,
+      "Medium": 21144
+    },
+    "columns": 16,
+    "complete_duplicates": 0,
+    "documented_means_checked": 18,
+    "execution": [],
+    "id_duplicates": 0,
+    "kpi_high_percent": "24.974",
+    "manifest_hashes": "PASS",
+    "notebooks": [
+      {
+        "code_cells": 4,
+        "errors": 0,
+        "notebook": "wrangler/01_ENTENDIMIENTO_NEGOCIO/01_entendimiento_negocio.ipynb",
+        "sha256": "bb1a9e890bebc5ba321d867ff25012f00114f758a5e65e642c2c8bfad57e3c44"
+      },
+      {
+        "code_cells": 20,
+        "errors": 0,
+        "notebook": "wrangler/02_COMPRENSION_DATOS/02_comprension_datos_eda.ipynb",
+        "sha256": "605b58780dc707ef06e69e0fe8f752d00fe4556487565132c023d0ce99c0088b"
+      },
+      {
+        "code_cells": 14,
+        "errors": 0,
+        "notebook": "wrangler/03_PREPARACION_DATOS/03_preparacion_datos.ipynb",
+        "sha256": "786ecdf1075c3208047976d4c7d963e058574e22b420c7c8392a74844c741a97"
+      },
+      {
+        "code_cells": 20,
+        "errors": 0,
+        "notebook": "notebook_eduanalytics_md.ipynb",
+        "sha256": "95da217224c9840e8303dc19c35149bec4d5bc553088c4d55083a8ce6613d58c"
+      }
+    ],
+    "nulls": 0,
+    "overlap": 0,
+    "partitions": [
+      {
+        "High": 8741,
+        "Low": 11458,
+        "Medium": 14801,
+        "partition": "train",
+        "rows": 35000
+      },
+      {
+        "High": 1873,
+        "Low": 2455,
+        "Medium": 3172,
+        "partition": "validation",
+        "rows": 7500
+      },
+      {
+        "High": 1873,
+        "Low": 2456,
+        "Medium": 3171,
+        "partition": "test",
+        "rows": 7500
+      }
+    ],
+    "predictors": 14,
+    "reconstruction": "EXACT",
+    "rows": 50000,
+    "source_sha256": "585c433cf9b447df6812c76dbb6732d2bb663689a7b595a9a4b5d777fea991d5",
+    "transforms": {
+      "arbol": {
+        "fresh_unfitted": "PASS",
+        "train_shape": [
+          35000,
+          30
+        ],
+        "unknown_categories": "PASS"
+      },
+      "logistica": {
+        "fresh_unfitted": "PASS",
+        "train_shape": [
+          35000,
+          30
+        ],
+        "unknown_categories": "PASS"
+      }
+    }
+  },
+  "phase4": {
+    "directed_tests": {
+      "boolean_conversion": "PASS",
+      "changed_protocol_rejected": "PASS",
+      "corrupt_artifact_rejected": "PASS",
+      "fold_only_scaler_and_categories": "PASS",
+      "fresh_instances": "PASS",
+      "metrics_order_and_orientation": "PASS",
+      "scenarios": [
+        14,
+        12
+      ],
+      "test_guard": "PASS",
+      "unknown_categories": "PASS"
+    },
+    "experiment_id": "3db94eb69df3c875",
+    "frozen_selection": "PASS",
+    "full_protocol_fits": 393,
+    "independent_load": {
+      "classes_order": [
+        "High",
+        "Low",
+        "Medium"
+      ],
+      "metrics": "EXACT",
+      "new_process": true,
+      "pipeline_sha256": "006b5a9e0b518633b8c227accb5d5c58d55c633001bc2ceb8092219680581d49",
+      "prediction_rows": 7500,
+      "predictions": "EXACT",
+      "probabilities": "EXACT"
+    },
+    "input_hashes": "PASS",
+    "membership_order_and_coverage": "EXACT",
+    "partitions": [
+      {
+        "High": 8741,
+        "Low": 11458,
+        "Medium": 14801,
+        "partition": "train",
+        "rows": 35000
+      },
+      {
+        "High": 1873,
+        "Low": 2455,
+        "Medium": 3172,
+        "partition": "validation",
+        "rows": 7500
+      },
+      {
+        "High": 1873,
+        "Low": 2456,
+        "Medium": 3171,
+        "partition": "test",
+        "rows": 7500
+      }
+    ],
+    "phase3_manifest_sha256": "50cd682633fde10258bbb8312d2f88f084077f6f537c17e47b2fe009fd2d3981",
+    "reconstruction": "EXACT",
+    "results_receipts": "PASS",
+    "row_and_student_overlap": 0,
+    "selection_before_test": "PASS",
+    "shared_folds": "PASS"
+  },
+  "seven_clean_notebooks": "PASS",
+  "source": "current local content, not a clone of an earlier commit"
+}
